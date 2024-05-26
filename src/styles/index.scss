@@ -1,0 +1,20 @@
+@import './variables';
+@import './partials/index';
+
+body{
+    font-family: var(--font-family-montserrat);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--white);        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--main-theme-color);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    //border: 3px solid orange;  /* creates padding around scroll thumb */
+  }

@@ -1,0 +1,15 @@
+<div class="why-chose-section">
+   <h2>Why choose?</h2>
+   <h1>HOTBOOK</h1>
+   <p>Because we have the easiest booking feature</p>
+
+   <div class="features">
+     <div class="feature-item" *ngFor="let feature of featureItems">
+        <div class="icon">
+            <mat-icon svgIcon="{{ feature.icon }}"></mat-icon>
+        </div>
+        <h5>{{ feature.title }}</h5>
+        <p>{{ feature.subtitle }}</p>
+     </div>
+   </div>
+</div>

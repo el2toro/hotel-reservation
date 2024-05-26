@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { ShellComponent } from "./components/shell/shell.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -10,7 +12,10 @@ import { FooterComponent } from "./components/footer/footer.component";
     NavbarComponent,
     FooterComponent
   ],
-  imports: [],
+  imports: [
+    MatIconModule,
+    RouterModule
+  ],
   providers: [],
   exports: [
     ShellComponent
