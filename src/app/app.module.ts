@@ -39,6 +39,8 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('money-bill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/money-bill.svg'));
                 this.matIconRegistry.addSvgIcon('security', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/security.svg'));
                 this.matIconRegistry.addSvgIcon('speedometer', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/speedometer.svg'));
+
+                this.matIconRegistry.addSvgIcon('arrow-right-thin', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-right-thin.svg'));
             
   }
 }

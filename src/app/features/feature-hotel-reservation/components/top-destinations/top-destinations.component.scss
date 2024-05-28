@@ -1,0 +1,218 @@
+.top-destinations{
+    background-color: var(--background);
+    padding: 0px 200px;
+    text-align: center;
+
+    h1{
+       font-family: var(--font-family-montserrat);
+       font-size: 32px;
+       font-weight: 700;
+       color: var(--feature-item-title);
+    }
+
+    p{
+        font-family: var(--font-family-montserrat);
+        font-size: 18px;
+        margin-top: 20px;
+        color: var(--feature-item-subtitle);
+    }
+
+    .destinations-container{
+        margin-top: 80px;
+        display: grid;
+        row-gap: 20px;
+
+        .destinations-container-first-row{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            width: 100%;
+            
+            .destination-item{
+              width: 570px;
+              height: 540px;
+              background-color: grey;
+              border-radius: 20px;
+
+              img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+              }
+
+              .hotel-badge{
+                position: relative;
+                top: -90px;
+                height: 50px;
+                width: 320px;
+                margin: 20px;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                p{
+                  color: var(--white);
+                  font-size: 24px;
+                  font-weight: 500;
+                  font-family: var(--font-family-montserrat);
+                  margin-top: 10px;
+
+                }
+
+                p + p{
+                    background-color: rgb(0, 0, 0, 0.3);
+                    border-radius: 10px;
+                    width: 160px;
+                    height: 40px;
+                    align-content: center;
+                    color: var(--white);
+                    font-size: 20px;
+                    font-weight: 400;
+                    font-family: var(--font-family-montserrat);
+                    margin-top: 12px;
+               
+                }
+              }
+            }
+
+            .destinations-inner-container{
+                display: grid;
+                row-gap: 20px;
+
+                .destination-inner-item{
+                    width: 520px;
+                    height: 255px;
+                    background-color: grey;
+                    border-radius: 20px;
+                    
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 20px;
+                      }
+
+                      .hotel-badge{
+                        position: relative;
+                        top: -90px;
+                        height: 50px;
+                        width: 320px;
+                        margin: 20px;
+                        padding: 10px;
+                        background-color: rgba(0, 0, 0, 0.15);
+                        border-radius: 8px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+        
+                        p{
+                          color: var(--white);
+                          font-size: 24px;
+                          font-weight: 500;
+                          font-family: var(--font-family-montserrat);
+                          margin-top: 10px;
+        
+                        }
+        
+                        p + p{
+                            background-color: rgb(0, 0, 0, 0.3);
+                            border-radius: 10px;
+                            width: 160px;
+                            height: 40px;
+                            align-content: center;
+                            color: var(--white);
+                            font-size: 20px;
+                            font-weight: 400;
+                            font-family: var(--font-family-montserrat);
+                            margin-top: 12px;
+                       
+                        }
+                      }
+                }
+            }
+        }
+
+        .destinations-container-second-row{
+            display: flex;
+            gap: 30px;
+
+            .destination-item-second-row{
+                width: 350px;
+                height: 350px;
+                background-color: grey;
+                border-radius: 20px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 20px;
+                }
+                .hotel-badge{
+                    position: relative;
+                    top: -90px;
+                    height: 50px;
+                    width: 320px;
+                    margin: 20px;
+                    padding: 10px;
+                    background-color: rgba(0, 0, 0, 0.15);
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    p{
+                      color: var(--white);
+                      font-size: 24px;
+                      font-weight: 500;
+                      font-family: var(--font-family-montserrat);
+                      margin-top: 10px;
+    
+                    }
+    
+                    p + p{
+                        background-color: rgb(0, 0, 0, 0.3);
+                        border-radius: 10px;
+                        width: 160px;
+                        height: 40px;
+                        align-content: center;
+                        color: var(--white);
+                        font-size: 20px;
+                        font-weight: 400;
+                        font-family: var(--font-family-montserrat);
+                        margin-top: 12px;
+                   
+                    }
+                  }
+                
+            }
+        }
+    }
+
+    .more-cities-button{
+        
+        margin-top: 60px;
+
+        button{
+            width: 214px;
+            height: 47px;
+            background-color: var(--main-theme-color);
+            font-family: var(--font-family-montserrat);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--white);
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
