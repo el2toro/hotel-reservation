@@ -36,6 +36,7 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('bed', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bed.svg'));
                 this.matIconRegistry.addSvgIcon('person-fill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/person-fill.svg'));
                 this.matIconRegistry.addSvgIcon('search', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/search.svg'));
+                this.matIconRegistry.addSvgIcon('star', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/star.svg'));
                 
                 //icons
                 this.matIconRegistry.addSvgIcon('support', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bx-support.svg'));

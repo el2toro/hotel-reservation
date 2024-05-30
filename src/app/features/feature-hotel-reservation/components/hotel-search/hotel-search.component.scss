@@ -13,6 +13,24 @@
         margin-top: 5px;
     }
 
+    .to-were{
+        input{
+            font-size: 20px;
+            font-weight: 200;
+            color: #7D8BA8;
+            font-family: var(--font-family-montserrat);
+            border: none;
+
+            &:focus{
+                border: none;
+            }
+
+            &:active{
+                border: none;
+            }
+        }
+    }
+
     mat-icon{
         margin-right: 10px;
         width: 35px;

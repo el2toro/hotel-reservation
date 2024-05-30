@@ -14,6 +14,8 @@ import { CustomerReviewSectionComponent } from "./components/customer-review-sec
 import { HotelSearchComponent } from "./components/hotel-search/hotel-search.component";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SingleHotelPageComponent } from "./pages/single-hotel-page/single-hotel-page.component";
+import { ImagesSectionComponent } from "./components/single-hotel-page-components/images-section/images-section.component";
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MarketingSectionComponent,
     SubscribeSectionComponent,
     CustomerReviewSectionComponent,
-    HotelSearchComponent
+    HotelSearchComponent,
+    SingleHotelPageComponent,
+    ImagesSectionComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,

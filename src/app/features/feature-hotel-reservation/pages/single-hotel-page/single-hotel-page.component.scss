@@ -1,0 +1,25 @@
+.single-hotel{
+    background-color: var(--background);
+
+    .navigation{
+        height: 171px;
+        background-color: var(--main-theme-color);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 45px 200px;
+
+        h3{
+            color: var(--white);
+        }
+    }
+
+    .hotel-search{
+        padding: 0px 200px;
+        position: relative;
+        top: -50px;
+    }
+
+    .images-section{
+        padding: 0px 200px;
+    }
+}
