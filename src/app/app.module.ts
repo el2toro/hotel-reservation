@@ -29,9 +29,14 @@ export class AppModule {
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {
 
-                this.matIconRegistry.addSvgIcon('menu', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/menu-icon.svg'));
-                this.matIconRegistry.addSvgIcon('close', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/close-icon.svg'));
-
+                this.matIconRegistry.addSvgIcon('plane', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/plane.svg'));
+                this.matIconRegistry.addSvgIcon('dashed-line', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dashed-line.svg'));
+                this.matIconRegistry.addSvgIcon('map-marker-outline', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/map-marker-outline.svg'));
+                this.matIconRegistry.addSvgIcon('calendar-blank', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/calendar-blank.svg'));
+                this.matIconRegistry.addSvgIcon('bed', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bed.svg'));
+                this.matIconRegistry.addSvgIcon('person-fill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/person-fill.svg'));
+                this.matIconRegistry.addSvgIcon('search', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/search.svg'));
+                
                 //icons
                 this.matIconRegistry.addSvgIcon('support', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bx-support.svg'));
                 this.matIconRegistry.addSvgIcon('map-pointer', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/map-marker-radius.svg'));
@@ -39,8 +44,18 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('money-bill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/money-bill.svg'));
                 this.matIconRegistry.addSvgIcon('security', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/security.svg'));
                 this.matIconRegistry.addSvgIcon('speedometer', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/speedometer.svg'));
+                this.matIconRegistry.addSvgIcon('call-support', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/call-support.svg'));
 
+                //Arrows
                 this.matIconRegistry.addSvgIcon('arrow-right-thin', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-right-thin.svg'));
-            
+                this.matIconRegistry.addSvgIcon('arrow-right', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-right.svg'));
+                this.matIconRegistry.addSvgIcon('arrow-left', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-left.svg'));
+
+                //Social media
+                this.matIconRegistry.addSvgIcon('facebook', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/facebook.svg'));
+                this.matIconRegistry.addSvgIcon('linkedin', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/linkedin.svg'));
+                this.matIconRegistry.addSvgIcon('twitter', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/twitter.svg'));
+
+
   }
 }

@@ -10,6 +10,10 @@ import { NearHotelsSectionComponent } from "./components/near-hotels-section/nea
 import { LatestFromBlogSectionComponent } from "./components/latest-from-blog-section/latest-from-blog-section.component";
 import { MarketingSectionComponent } from "./components/marketing-section/marketing-section.component";
 import { SubscribeSectionComponent } from "./components/subscribe-section/subscribe-section.component";
+import { CustomerReviewSectionComponent } from "./components/customer-review-section/customer-review-section.component";
+import { HotelSearchComponent } from "./components/hotel-search/hotel-search.component";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -21,12 +25,16 @@ import { SubscribeSectionComponent } from "./components/subscribe-section/subscr
     NearHotelsSectionComponent,
     LatestFromBlogSectionComponent,
     MarketingSectionComponent,
-    SubscribeSectionComponent
+    SubscribeSectionComponent,
+    CustomerReviewSectionComponent,
+    HotelSearchComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatDatepickerModule,
+    MatFormFieldModule
   ],
   providers: [],
   exports: []

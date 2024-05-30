@@ -2,7 +2,24 @@
     height: 577px;
     background-color: var(--main-theme-color);
     padding: 200px;
-    
+
+    .plane{
+        mat-icon{
+            width: 48px;
+            height: 48px;
+            position: absolute;
+            top: 320px;
+            left: 280px;
+        }
+
+        mat-icon + mat-icon{
+            width: 800px;
+            height: 400px;
+            fill: var(--white);
+            top: 240px;
+            left: 313px;
+        }
+    }
 
     .reserve-title{
         width: 350px;
@@ -22,6 +39,12 @@
             font-weight: 300;
             font-family: var(--font-family-montserrat);
         }
+    }
+
+    .hotel-search{
+        position: relative;
+        top: 30px;
+        z-index: 1;
     }
 
     .hero-photo{

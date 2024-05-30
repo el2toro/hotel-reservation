@@ -1,0 +1,68 @@
+.hotel-search{
+    height: 115px;
+    background-color: var(--white);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+   .item{
+    display: flex;
+
+    .to-were, .check-in, .rooms, .guests{
+        margin-top: 5px;
+    }
+
+    mat-icon{
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
+    p{
+     font-size: 20px;
+     font-weight: 600;
+     font-family: var(--font-family-montserrat);
+    }
+
+    p + p {
+        font-weight: 200;
+        color: #7D8BA8;
+    }
+   }
+
+   .item:nth-child(2){
+    mat-icon{
+        width: 30px;
+        height: 30px;
+    }
+   }
+
+   .item:nth-child(3), 
+   .item:nth-child(4){
+    mat-icon{
+        width: 24px;
+        height: 24px;
+    }
+   }
+
+
+    .search-box{
+        width: 125px;
+        height: 75px;
+        background-color: var(--main-theme-color);
+        border-radius: 20px;
+        text-align: center;
+        align-content: center;
+
+        mat-icon{
+            width: 30px;
+            height: 30px;
+        }
+
+        &:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+}
