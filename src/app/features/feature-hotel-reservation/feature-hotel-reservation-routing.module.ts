@@ -6,7 +6,7 @@ import { SingleHotelPageComponent } from "./pages/single-hotel-page/single-hotel
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'home', component: SingleHotelPageComponent }
+  { path: 'room', component: SingleHotelPageComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,48 @@
+.frequently-asked-question{
+    padding: 50px 200px;
+    background-color: var(--white);
+
+    h1{
+        font-size: 20px;
+        font-weight: 700;
+        font-family: var(--font-family-montserrat);
+        color: rgb(10, 29, 68, 0.79);
+    }
+
+    mat-panel-title{
+
+        padding-right: 50px;
+        .question{   
+            width: 100%;
+            p{
+                
+            }
+        }
+
+        .hr-line{
+          height: 1px;
+          background-color: red;
+          width: 100%;
+          margin-left: 20px;
+        }
+    }
+}
+
+.mat-expansion-panel{
+    box-shadow: none;
+    padding: 0px;
+}
+
+.mat-expansion-panel-header-title{
+    align-items: center;
+    padding: 0px;
+}
+
+.mat-expansion-panel-header{
+    height: 50px;
+}
+
+.mat-expansion-panel-header{
+    padding: 0px;
+}
+

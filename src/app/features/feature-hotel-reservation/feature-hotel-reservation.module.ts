@@ -16,7 +16,16 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SingleHotelPageComponent } from "./pages/single-hotel-page/single-hotel-page.component";
 import { ImagesSectionComponent } from "./components/single-hotel-page-components/images-section/images-section.component";
-
+import { PropertyHighlightsComponent } from "./components/single-hotel-page-components/property-highlights/property-highlights.component";
+import { AvailabilityComponent } from "./components/single-hotel-page-components/availability/availability.component";
+import { OverviewComponent } from "./components/single-hotel-page-components/overview/overview.component";
+import { HotelAmenitiesComponent } from "./components/single-hotel-page-components/hotel-amenities/hotel-amenities.component";
+import { LocationComponent } from "./components/single-hotel-page-components/location/location.component";
+import { ReviewComponent } from "./components/single-hotel-page-components/review/review.component";
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FrequentlyAskedQuestionComponent } from "./components/single-hotel-page-components/frequently-asked-question/frequently-asked-question.component";
+import { MatExpansionModule } from '@angular/material/expansion';
+import { OtherNearPropertiesComponent } from "./components/single-hotel-page-components/other-near-properties/other-near-properties.component";
 
 @NgModule({
   declarations: [
@@ -31,14 +40,24 @@ import { ImagesSectionComponent } from "./components/single-hotel-page-component
     CustomerReviewSectionComponent,
     HotelSearchComponent,
     SingleHotelPageComponent,
-    ImagesSectionComponent
+    ImagesSectionComponent,
+    PropertyHighlightsComponent,
+    AvailabilityComponent,
+    OverviewComponent,
+    HotelAmenitiesComponent,
+    LocationComponent,
+    ReviewComponent,
+    FrequentlyAskedQuestionComponent,
+    OtherNearPropertiesComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,
     MatIconModule,
     CommonModule,
     MatDatepickerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressBarModule,
+    MatExpansionModule
   ],
   providers: [],
   exports: []

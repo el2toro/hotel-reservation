@@ -18,3 +18,9 @@ body::-webkit-scrollbar {
     border-radius: 20px;       /* roundness of the scroll thumb */
     //border: 3px solid orange;  /* creates padding around scroll thumb */
   }
+
+  .mat-expansion-indicator::after{
+    width: 18px;
+    height: 18px;
+    color: rgb(0, 0, 0, 0.40);
+  }

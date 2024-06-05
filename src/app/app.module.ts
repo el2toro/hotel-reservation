@@ -37,6 +37,14 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('person-fill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/person-fill.svg'));
                 this.matIconRegistry.addSvgIcon('search', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/search.svg'));
                 this.matIconRegistry.addSvgIcon('star', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/star.svg'));
+                this.matIconRegistry.addSvgIcon('check', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/check.svg'));
+
+                this.matIconRegistry.addSvgIcon('car-brake-parking', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/car-brake-parking.svg'));
+                this.matIconRegistry.addSvgIcon('dog-solid', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dog-solid.svg'));
+                this.matIconRegistry.addSvgIcon('desktop-solid', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/desktop-solid.svg'));
+                this.matIconRegistry.addSvgIcon('washing-machine', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/washing-machine.svg'));
+                this.matIconRegistry.addSvgIcon('plane-departure', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/plane-departure.svg'));
+                this.matIconRegistry.addSvgIcon('dumbbell', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dumbbell.svg'));
                 
                 //icons
                 this.matIconRegistry.addSvgIcon('support', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bx-support.svg'));

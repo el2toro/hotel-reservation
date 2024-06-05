@@ -1,0 +1,151 @@
+.availability{
+    padding: 50px 200px;
+
+    h1{
+        font-size: 24px;
+        font-weight: 700;
+        font-family: var(--font-family-montserrat);
+        color: rgb(10, 29, 68, 0.79);
+    }
+
+    p{
+        margin-top: -10px;
+        font-size: 16px;
+        color: rgb(10, 29, 68, 0.53);
+        font-family: var(--font-family-montserrat);
+
+        span{
+            color: #19AD30;
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: var(--font-family-montserrat);
+        }
+    }
+
+    .point{
+        width: 5px;
+        height: 5px;
+        border-radius: 20px;
+        background-color: #B1B1B1;
+        margin: -5px 0px 20px 0px;
+        margin-left: 25%;
+    }
+
+    .selection-details{
+        display: flex;
+
+        .vertical-line{
+            border-right: 1px solid rgb(19, 53, 124, 0.37);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        p{
+            color: rgb(10, 29, 68, 0.79);
+        }
+    }
+
+    .available-room-list{
+        display: grid;
+        row-gap: 15px;
+
+        .available-room-item{
+            display: flex;
+            background-color: #F0F4FA;           
+            padding: 15px;
+            border-radius: 10px;
+
+            .image{
+                width: 316px;
+                height: 212px;
+                border-radius: 10px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+
+            .room-title{
+                width: 80%;
+                margin-left: 30px;
+
+                .room-details{
+                    display: flex;
+                    justify-content: space-between;
+
+                    .available-facilities{
+                        display: flex;
+
+                        li{
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #3C4B6B;
+                            font-family: var(--font-family-montserrat);
+                            display: flex;
+                            align-content: center;
+                            margin-right: 50px;
+
+                            span{
+                                margin-right: 10px;
+                            }
+                        }
+
+                        ul:nth-child(2){
+                            li:last-child{
+                                color: #1F59D3;
+                                font-weight: 500;
+                                
+                                &:hover{
+                                    opacity: 0.5;
+                                    cursor: pointer;
+                                }
+                            }
+                        }    
+                    }
+
+                    .price{
+                        text-align: right;
+
+                        p{
+                            font-size: 12px;
+                            color: rgb(10, 29, 68, 0.49);
+                        }
+
+                        p:nth-child(2){
+                            color: #0A1D44;
+                            font-size: 24px;
+                            font-weight: 600;
+
+                            span{
+                                font-size: 18px;
+                                color: rgb(10, 29, 68, 0.65);
+                                text-decoration: line-through;
+                                margin-right: 10px;
+                            }
+                        }    
+                        
+                        button{
+                            width: 216px;
+                            height: 44px;
+                            background-color: #FB9B42;
+                            font-family: var(--font-family-montserrat);
+                            color: white;
+                            font-size: 20px;
+                            border-radius: 10px;     
+                            border: none;      
+                            cursor: pointer;   
+
+                            &:hover{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

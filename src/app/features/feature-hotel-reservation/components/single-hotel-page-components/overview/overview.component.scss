@@ -1,0 +1,18 @@
+.overview{
+    padding: 0px 200px;
+    
+  h1{
+    color: rgb(10, 29, 68, 0.79);
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p{
+    color: rgb(10, 29, 68, 0.66);
+    font-size: 14px;
+  }
+
+  p + p{
+    color: #1F59D3;
+  }
+}

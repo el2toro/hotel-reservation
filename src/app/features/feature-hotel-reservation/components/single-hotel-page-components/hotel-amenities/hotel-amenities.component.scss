@@ -1,0 +1,42 @@
+.amenities{
+    padding: 30px 200px;
+
+    h1{
+        font-size: 20px;
+        font-weight: 700;
+        font-family: var(--font-family-montserrat);
+        color: rgb(10, 29, 68, 0.79);
+    }
+
+    .amenitie-list{
+        display: flex;
+        justify-content: space-between;
+
+        li{
+            font-size: 14px;
+            font-weight: 600;
+            color: #3C4B6B;
+            font-family: var(--font-family-montserrat);
+            display: flex;
+            align-items: center;
+            margin-right: 50px;
+            margin-bottom: 20px;
+
+            span{
+                margin-right: 10px;
+            }
+        }
+
+        ul:last-child{
+            li:last-child{
+                color: #1F59D3;
+                font-weight: 500;
+                
+                &:hover{
+                    opacity: 0.5;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
