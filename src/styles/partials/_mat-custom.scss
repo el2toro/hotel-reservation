@@ -2,3 +2,17 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.mat-form-field-underline{
+    display: none;
+}
+
+
+.mat-select-arrow{
+    //display: none;
+}
+
+.mat-expansion-indicator::after{
+    width: 10px !important;
+    height: 10px !important;
+}

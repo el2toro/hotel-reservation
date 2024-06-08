@@ -1,0 +1,157 @@
+<div class="hotel-list">
+  <div class="navigation">
+    <h1>Reserve Your Hotel</h1>
+    <p>With just a matter of clicks</p>
+  </div>
+
+  <div class="hotel-search">
+    <app-hotel-search></app-hotel-search>
+  </div>
+
+  <div class="content-container">
+    <div class="heading-toolbar">
+      <div class="search-result">
+        <p>Search results</p>
+        <div class="vertical-line"></div>
+        <p class="property-found"> <em>586</em> Properties found in Las Vegas</p>
+      </div>
+
+      <div class="properties-filter">
+        <mat-form-field>
+          <mat-label>Discount</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="vertical-line"></div>
+
+        <mat-form-field>
+          <mat-label>Popularity</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button matButton>
+          <mat-icon svgIcon="list-top-menu"></mat-icon>
+        </button>
+
+        <button matButton>
+          <mat-icon svgIcon="grid-menu"></mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="main-content">
+      <div class="hotel-filters">
+        <div class="map">
+          <img src="assets/images/map.png" alt="img">
+
+          <div class="show-on-map">
+            <mat-icon svgIcon="map-marker-radius-outline"></mat-icon>
+            <p>Show on map</p>
+          </div>
+        </div>
+
+        <div class="search-input">
+          <input matInput placeholder="Search by name">
+          <mat-icon svgIcon="search-filled"></mat-icon>
+        </div>
+
+        
+          <mat-slider min="100" max="500">
+            <input value="200" matSliderStartThumb>
+            <input value="300" matSliderEndThumb>
+          </mat-slider>
+     
+        <div class="price-range">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><span>Discounts <hr></span></p>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+            <p>I'm visible because I am open</p>
+            <p>I'm visible because I am open</p>
+            <p>I'm visible because I am open</p>
+            <p>I'm visible because I am open</p>
+            <p>I'm visible because I am open</p>
+
+          </mat-expansion-panel>
+        </div>
+
+
+      </div>
+      <div class="hotel-search-list">
+        <div class="hotel-search-list-item">
+          <div class="image">
+            <img src="assets/images/hotel-1.jpg" alt="img">
+          </div>
+          <div class="hotel-about">
+            <h3>The Hotel name goes here</h3>
+            <div class="star-rating">
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+            </div>
+
+            <p>3730 Las Vegas Boulevard South, Las Vegas, NV, US</p>
+
+            <div class="price-details">
+              <div class="charges">
+                <p>860USD <span> / Night</span></p>
+                <p>+100 Taxes and charges</p>
+              </div>
+
+              <div class="choose-rooms-button">
+                <button matButton>Choose rooms</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-search-list-item">
+          <div class="image">
+            <img src="assets/images/hotel-1.jpg" alt="img">
+          </div>
+          <div class="hotel-about">
+            <h3>The Hotel name goes here</h3>
+            <div class="star-rating">
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+            </div>
+
+            <p>3730 Las Vegas Boulevard South, Las Vegas, NV, US</p>
+
+            <div class="price-details">
+              <div class="charges">
+                <p>860USD <span> / Night</span></p>
+                <p>+100 Taxes and charges</p>
+              </div>
+
+              <div class="choose-rooms-button">
+                <button matButton>Choose rooms</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

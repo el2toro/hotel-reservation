@@ -26,6 +26,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FrequentlyAskedQuestionComponent } from "./components/single-hotel-page-components/frequently-asked-question/frequently-asked-question.component";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { OtherNearPropertiesComponent } from "./components/single-hotel-page-components/other-near-properties/other-near-properties.component";
+import { KeepUpdatedComponent } from "./components/single-hotel-page-components/keep-updated/keep-updated.component";
+import { HotelListPageComponent } from "./pages/hotel-list-page/hotel-list-page.component";
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,9 @@ import { OtherNearPropertiesComponent } from "./components/single-hotel-page-com
     LocationComponent,
     ReviewComponent,
     FrequentlyAskedQuestionComponent,
-    OtherNearPropertiesComponent
+    OtherNearPropertiesComponent,
+    KeepUpdatedComponent,
+    HotelListPageComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,
@@ -57,7 +65,11 @@ import { OtherNearPropertiesComponent } from "./components/single-hotel-page-com
     MatDatepickerModule,
     MatFormFieldModule,
     MatProgressBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    FormsModule,
+    MatInputModule,
+    MatSliderModule
   ],
   providers: [],
   exports: []

@@ -32,12 +32,16 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('plane', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/plane.svg'));
                 this.matIconRegistry.addSvgIcon('dashed-line', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dashed-line.svg'));
                 this.matIconRegistry.addSvgIcon('map-marker-outline', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/map-marker-outline.svg'));
+                this.matIconRegistry.addSvgIcon('map-marker-radius-outline', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/map-marker-radius-outline.svg'));
                 this.matIconRegistry.addSvgIcon('calendar-blank', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/calendar-blank.svg'));
                 this.matIconRegistry.addSvgIcon('bed', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/bed.svg'));
                 this.matIconRegistry.addSvgIcon('person-fill', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/person-fill.svg'));
                 this.matIconRegistry.addSvgIcon('search', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/search.svg'));
+                this.matIconRegistry.addSvgIcon('search-filled', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/search-filled.svg'));
                 this.matIconRegistry.addSvgIcon('star', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/star.svg'));
                 this.matIconRegistry.addSvgIcon('check', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/check.svg'));
+                this.matIconRegistry.addSvgIcon('grid-menu', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/grid-menu.svg'));
+                this.matIconRegistry.addSvgIcon('list-top-menu', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/list-top-menu.svg'));
 
                 this.matIconRegistry.addSvgIcon('car-brake-parking', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/car-brake-parking.svg'));
                 this.matIconRegistry.addSvgIcon('dog-solid', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dog-solid.svg'));

@@ -1,0 +1,342 @@
+.hotel-list{
+    background-color: var(--background);
+
+    .navigation{
+        height: 270px;
+        background-color: var(--main-theme-color);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 45px 200px;
+        text-align: center;
+
+        h1{
+            font-size: 64px;
+            font-family: var(--font-family-montserrat);
+            font-weight: 600;
+            color: var(--white);    
+            margin-top: 40px;
+        }
+
+        p{
+            font-size: 24px;
+            font-family: var(--font-family-montserrat);
+            color: var(--white);  
+            margin-top: 40px;
+        }
+    }
+
+    .hotel-search{
+        padding: 0px 200px;
+        position: relative;
+        top: -50px;
+    }
+
+    hr{
+        opacity: 0.3;
+       }
+
+    .content-container{
+       padding: 100px 200px;
+
+       .heading-toolbar{
+          display: flex;
+          justify-content: space-between;
+
+          .search-result{
+            display: flex;
+            
+            p{
+                margin-top: 20px;
+                font-size: 20px;
+                color: #0A1D44;
+            }
+
+            .property-found  {
+                font-size: 16px;
+                color: rgb(10, 29, 68, 0.58);
+
+                em{
+                    font-weight: 600;
+                    color: rgb(10, 29, 68, 0.79);
+                }
+            }
+
+            .vertical-line{
+                border: 1px solid rgb(19, 53, 124, 0.20);
+                rotate: 180deg;
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+          }
+
+          .properties-filter{
+            display: flex;
+
+            
+            .vertical-line{
+                border: 1px solid rgb(19, 53, 124, 0.20);
+                rotate: 180deg;
+                margin-left: 40px;
+                margin-right: 40px;
+            }
+
+            mat-label{
+                color: rgb(10, 29, 68, 0.58);
+                font-size: 16px;
+            }
+
+            button{
+                margin-left: 10px;
+                border: 1px solid rgb(0, 0, 0, 0.07);
+                background-color: var(--white);
+                width: 49px;
+                height: 49px;
+                border-radius: 5px;
+
+
+                mat-icon{
+                    opacity: 0.5;
+                }
+
+                &:hover{
+                    border: 2px solid black;
+                    cursor: pointer;
+                    
+                    mat-icon{
+                        opacity: 1;
+                    }
+                }
+            }
+          }
+       }
+
+
+       .main-content{
+        display: flex;
+        gap: 30px;
+        margin-top: 30px;
+
+        .hotel-filters{
+            width: 255px;
+
+            .map{
+                height: 265px;
+                border-radius: 15px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 15px;
+                }
+
+                .show-on-map{
+                    display: flex;
+                    position: relative;
+                    height: 59px;
+                    margin: 0px 10px;
+                    background-color: var(--white);
+                    margin-top: -100px;
+                    border-radius: 10px;
+                    padding: 15px;
+
+
+                    p{
+                        margin-left: 10px;
+                        color: #3D4C6B;
+                        font-size: 16px;
+                        font-family: var(--font-family-montserrat);
+                        margin-top: 5px;
+                    }
+
+                    &:hover{
+                        opacity: 0.9;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search-input{
+                input{
+                    margin-top: 20px;
+                    font-family: var(--font-family-montserrat);
+                    font-size: 16px;
+                    color: rgb(61, 76, 107, 0.63);
+                    border-bottom: 2px solid rgb(0, 0, 0, 0.21);
+                    padding: 10px 0px;
+                }
+
+                input::placeholder{
+                    font-style: italic;  
+                }
+
+                input:focus{
+                    border-bottom: 2px solid rgb(0, 0, 0, 0.51);
+                }
+
+                mat-icon{
+                    position: relative;
+                    float: right;
+                    margin-top: -35px;
+
+                    &:hover{
+                        opacity: 0.7;
+                        cursor: pointer;
+                    }
+                }
+            } 
+
+            .price-range{
+                margin-top: 30px;
+
+                mat-expansion-panel{
+                    background-color: transparent;
+                    box-shadow: none;
+                    position: relative;
+                    z-index: 1;
+
+                    mat-expansion-panel-header{
+                        padding: 0px;
+                        
+
+                        mat-panel-title{
+                           // display: flex;
+                           // align-items: center;
+
+                            p{
+                                font-size: 16px;
+                                font-weight: 600;
+                                font-family: var(--font-family-montserrat);
+                                color: rgb(10, 29, 68, 0.79);
+                                margin-top: 15px;
+                            }                   
+                        }
+                    }
+                }
+            }
+        }
+
+        .hotel-search-list{
+            width: 100%;
+            display: grid;
+            row-gap: 20px;
+
+            .hotel-search-list-item{
+                display: flex;
+                gap: 30px;
+                background-color: #F0F4FA;
+                padding: 10px;
+                border-radius: 20px;
+                border: 2px solid transparent;
+
+                .image{
+                    width: 386px;
+                    height: 197px;
+                    border-radius: 20px;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 20px;
+                        object-fit: cover;
+                    }
+                }
+
+                .hotel-about{
+                    width: 100%;
+
+                    h3{
+                       font-size: 20px;
+                       font-family: var(--font-family-montserrat);
+                       color: rgb(10, 29, 68, 0.79);
+                       font-weight: 500;
+                    }
+
+                    .star-rating{
+                        margin-top: -15px;
+
+                        mat-icon{
+                            width: 19px;
+                            height: 19px;
+                        }
+                    }
+
+                    p{
+                        font-size: 14px;
+                        font-family: var(--font-family-montserrat);
+                        color: rgb(10, 29, 68, 0.62);
+                        margin-top: 10px;
+                        font-weight: 500;
+                    }
+
+                    .price-details{
+                          display: flex;
+                          justify-content: space-between;
+                          align-items: center;
+                          margin-top: 50px;
+                          width: 100%;
+
+                        .charges{            
+                            p{
+                               font-size: 28px;
+                               font-weight: 600;
+                               color: #0A1D44;
+
+                                span{
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    color: rgb(10, 29, 68, 0.86);
+                                }
+                            }
+
+                            p + p{
+                                font-size: 12px;
+                                font-weight: 500;
+                                color: rgb(10, 29, 68, 0.58);
+                                margin-top: -12px;
+                            }
+                        }
+
+                        .choose-rooms-button{
+                            margin-right: 20px;
+                            
+                            button{  
+                                width: 216px;
+                                height: 44px;
+                                border-radius: 15px;
+                                border: none;
+                                background-color: #FB9B42;
+                                color: var(--white);
+                                font-size: 20px;
+                                font-weight: 600;
+                                font-family: var(--font-family-montserrat);
+
+                                &:hover{
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover{
+                    background-color: var(--white);
+                    border: 2px solid rgb(10, 29, 68, 0.58);
+                    //TODO: shadow
+                    //box-shadow: 0 25px 6px -6px rgba(157, 160, 168, 0.38);
+
+                    .hotel-about{
+                        .price-details{
+                            .choose-rooms-button{
+                                button{  
+                                    background-color:#17202A;
+                                }
+                            }
+                        }
+                    }                                                                                    
+               }
+            }
+        }
+       }
+    }
+}
