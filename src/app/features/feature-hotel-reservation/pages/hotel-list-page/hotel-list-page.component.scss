@@ -188,12 +188,14 @@
 
             .price-range{
                 margin-top: 30px;
+                position: relative;
+                z-index: 1;
 
                 mat-expansion-panel{
                     background-color: transparent;
                     box-shadow: none;
-                    position: relative;
-                    z-index: 1;
+                    ///position: absolute;
+                   
 
                     mat-expansion-panel-header{
                         padding: 0px;
@@ -336,6 +338,65 @@
                     }                                                                                    
                }
             }
+
+           .paginator-container{
+            display: flex;
+            justify-content: flex-end;
+
+            .paginator{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+
+                button{
+                    border-radius: 10px;
+                    width: 66px;
+                    height: 66px;
+                    border: 2px solid rgb(0, 0, 0, 0.07);
+                    font-family: var(--font-family-montserrat);
+                    color: rgb(10, 29, 68, 0.38);
+                    font-size: 20px;
+                    background-color: transparent;
+                    border: none;
+
+                    mat-icon{
+                       width: 16px;
+                       height: 16px;
+                    }                 
+
+                   &:hover{
+                    border: 3px solid black;
+                    color: black;
+                    font-weight: 600;
+                    opacity: 0.5;
+                    cursor: pointer;
+                   }    
+                   
+                   &:focus{
+                    border: 3px solid black;
+                    color: black;
+                    font-weight: 600;
+                    opacity: 1;
+                   }
+                }
+
+                button:last-child{
+                    mat-icon{
+                        rotate: 180deg;
+                        margin-top: 15px;
+                    }
+                }
+
+                button:first-child, button:last-child{
+                    border: 1px solid rgb(0, 0, 0, 0.07);
+                    background-color: var(--white);
+
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+           }
         }
        }
     }

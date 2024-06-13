@@ -94,12 +94,12 @@
 
       </div>
       <div class="hotel-search-list">
-        <div class="hotel-search-list-item">
+        <div class="hotel-search-list-item" *ngFor="let hotel of pageItems">
           <div class="image">
-            <img src="assets/images/hotel-1.jpg" alt="img">
+            <img src="{{ hotel.image }}" alt="img">
           </div>
           <div class="hotel-about">
-            <h3>The Hotel name goes here</h3>
+            <h3>{{ hotel.name }}</h3>
             <div class="star-rating">
               <mat-icon svgIcon="star"></mat-icon>
               <mat-icon svgIcon="star"></mat-icon>
@@ -108,12 +108,12 @@
               <mat-icon svgIcon="star"></mat-icon>
             </div>
 
-            <p>3730 Las Vegas Boulevard South, Las Vegas, NV, US</p>
+            <p>{{ hotel.location }}</p>
 
             <div class="price-details">
               <div class="charges">
-                <p>860USD <span> / Night</span></p>
-                <p>+100 Taxes and charges</p>
+                <p>{{ hotel.price }} <span> / Night</span></p>
+                <p>{{ hotel.charges }} Taxes and charges</p>
               </div>
 
               <div class="choose-rooms-button">
@@ -123,33 +123,22 @@
           </div>
         </div>
 
-        <div class="hotel-search-list-item">
-          <div class="image">
-            <img src="assets/images/hotel-1.jpg" alt="img">
-          </div>
-          <div class="hotel-about">
-            <h3>The Hotel name goes here</h3>
-            <div class="star-rating">
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-            </div>
-
-            <p>3730 Las Vegas Boulevard South, Las Vegas, NV, US</p>
-
-            <div class="price-details">
-              <div class="charges">
-                <p>860USD <span> / Night</span></p>
-                <p>+100 Taxes and charges</p>
-              </div>
-
-              <div class="choose-rooms-button">
-                <button matButton>Choose rooms</button>
-              </div>
-            </div>
-          </div>
+        <div class="paginator-container">
+          <div class="paginator">
+            <button (click)="previousPage()">
+              <mat-icon svgIcon="paginator-arrow-left"></mat-icon>
+            </button>
+  
+           <ng-container *ngFor="let page of totalPageList; let pageIndex=index">
+            <button (click)="getPageData(pageIndex)" *ngIf="page < 5 || page === totalPageList.length -1 ||  page === totalPageList.length">
+              {{ getButtonContent((pageIndex), totalPageList.length) }}
+             </button>
+           </ng-container>
+ 
+            <button (click)="nextPage()">
+             <mat-icon svgIcon="paginator-arrow-left"></mat-icon>
+            </button>
+         </div>
         </div>
       </div>
     </div>

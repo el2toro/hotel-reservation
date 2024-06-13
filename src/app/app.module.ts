@@ -63,6 +63,7 @@ export class AppModule {
                 this.matIconRegistry.addSvgIcon('arrow-right-thin', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-right-thin.svg'));
                 this.matIconRegistry.addSvgIcon('arrow-right', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-right.svg'));
                 this.matIconRegistry.addSvgIcon('arrow-left', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/arrow-left.svg'));
+                this.matIconRegistry.addSvgIcon('paginator-arrow-left', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/paginator-arrow-left.svg'));
 
                 //Social media
                 this.matIconRegistry.addSvgIcon('facebook', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/facebook.svg'));
