@@ -7,12 +7,59 @@
     display: none;
 }
 
-
-.mat-select-arrow{
-    //display: none;
-}
-
 .mat-expansion-indicator::after{
     width: 10px !important;
     height: 10px !important;
+}
+
+.mat-expansion-panel-body{
+    padding: 0px !important;
+}
+
+.mat-checkbox-inner-container{
+  width: 25px !important;
+  height: 25px !important;
+  background-color: var(--white);
+
+  &:focus{
+    background-color: black;
+  }
+}
+
+.mat-checkbox-frame{
+    border-radius: 5px !important;
+    border: 2px solid rgb(0, 0, 0, 0.19) !important;
+}
+
+.mat-checkbox .mat-checkbox-ripple:hover{
+    background-color: beige;
+}
+
+.mat-slider-horizontal{
+    width: 100% !important;
+}
+
+.mat-slider-horizontal .mat-slider-track-wrapper{
+    height: 6px !important;
+}
+
+.mat-slider-horizontal .mat-slider-track-background{
+    height: 6px !important;
+    background-color: rgb(23, 32, 42) !important;
+    border-radius: 15px !important;
+}
+
+.mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label{
+    background-color: rgb(23, 32, 42) !important;
+}
+
+.mat-slider-horizontal .mat-slider-track-fill{
+    height: 6px !important;
+    background-color: rgb(217, 217, 217, 0.52) !important;
+    border-radius: 15px !important;
+}
+
+.mat-slider-thumb{
+    right: -15px !important;
+    bottom: -11px !important;
 }

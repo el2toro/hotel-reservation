@@ -66,31 +66,246 @@
         </div>
 
         
-          <mat-slider min="100" max="500">
-            <input value="200" matSliderStartThumb>
-            <input value="300" matSliderEndThumb>
-          </mat-slider>
+          <div class="price-range">
+            <div class="title">
+              <p>Price range / Night</p>
+              <p>100 - 1000USD</p>
+            </div>
+            <mat-slider min="100" max="500">
+              <input value="200" matSliderStartThumb>
+              <input value="300" matSliderEndThumb>
+            </mat-slider>
+          </div>
      
-        <div class="price-range">
+        <div class="common-expantion-panel">
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <p><span>Discounts <hr></span></p>
+                <p>Discounts</p>
+               <div class="hr-line"></div>
               </mat-panel-title>
               <!-- <mat-panel-description>
                 Currently I am {{panelOpenState ? 'open' : 'closed'}}
               </mat-panel-description> -->
             </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-            <p>I'm visible because I am open</p>
-            <p>I'm visible because I am open</p>
-            <p>I'm visible because I am open</p>
-            <p>I'm visible because I am open</p>
-            <p>I'm visible because I am open</p>
-
+            <mat-slider min="1" max="100">
+              <input value="1" matSliderStartThumb>
+            </mat-slider>
+           
           </mat-expansion-panel>
         </div>
 
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Popular filters</p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Parking</p>
+            </div>
+  
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Book without credit card</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Special deals</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Breakfast</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Wifi</p>
+            </div>
+
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Pets</p>
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Deals </p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Free cancellation</p>
+            </div>
+  
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>No pre-payment</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Book without credit card</p>
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Room facilities </p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Air conditioning</p>
+            </div>
+  
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Private bathroom</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Free wifi</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Private pool</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Balcony</p>
+            </div>
+
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>View</p>
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Amenities</p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Breakfast included</p>
+            </div>
+  
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Swimming pool</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Parking</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Pets</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Shuttle</p>
+            </div>
+
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Pool parlour</p>
+            </div>
+            <p>View all 24</p>
+          </mat-expansion-panel> 
+        </div>
+
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Popular filters</p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+
+            <div class="filter-item">
+              <p>Click on the star</p>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star"></mat-icon>
+            </div>
+          </mat-expansion-panel>
+        </div>
+
+        <div class="popular-filters common-expantion-panel">
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p>Neighborhood</p>
+                <div class="hr-line"></div>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Los Angeles</p>
+            </div>
+  
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Las Vegas</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Houston</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>California</p>
+            </div>
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Virginia</p>
+            </div>
+
+            <div class="filter-item">
+              <mat-checkbox></mat-checkbox>
+              <p>Colombo</p>
+            </div>
+            <p>View all 24</p>
+          </mat-expansion-panel>
+        </div>
 
       </div>
       <div class="hotel-search-list">
@@ -130,7 +345,7 @@
             </button>
   
            <ng-container *ngFor="let page of totalPageList; let pageIndex=index">
-            <button (click)="getPageData(pageIndex)" *ngIf="page < 5 || page === totalPageList.length -1 ||  page === totalPageList.length">
+            <button (click)="getPageData(pageIndex)" *ngIf="page < 4 || page === totalPageList.length -2 || page === totalPageList.length - 1">
               {{ getButtonContent((pageIndex), totalPageList.length) }}
              </button>
            </ng-container>
@@ -143,4 +358,9 @@
       </div>
     </div>
   </div>
+
+  <div class="keep-updated">
+    <app-subscribe-section></app-subscribe-section>
+  </div>
 </div>
+

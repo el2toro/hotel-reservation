@@ -186,24 +186,18 @@
                 }
             } 
 
-            .price-range{
-                margin-top: 30px;
-                position: relative;
-                z-index: 1;
-
+            .common-expantion-panel{
                 mat-expansion-panel{
                     background-color: transparent;
                     box-shadow: none;
-                    ///position: absolute;
                    
-
                     mat-expansion-panel-header{
                         padding: 0px;
                         
-
                         mat-panel-title{
-                           // display: flex;
-                           // align-items: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
 
                             p{
                                 font-size: 16px;
@@ -211,10 +205,57 @@
                                 font-family: var(--font-family-montserrat);
                                 color: rgb(10, 29, 68, 0.79);
                                 margin-top: 15px;
-                            }                   
+                                white-space: nowrap;
+                            }    
+                            
+                            .hr-line{
+                                border: 1px solid rgb(0, 0, 0, 0.10);
+                                margin-left: 10px;
+                                width: 50%;
+                            }
                         }
                     }
+
+                    mat-slider{
+                        margin-top: -20px;
+                    }
                 }
+            }
+
+            .price-range{
+                margin-top: 30px;
+                position: relative;
+                
+                .title{
+                   p{
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: var(--font-family-montserrat);
+                    color: rgb(10, 29, 68, 0.79);
+                    margin-top: 15px;
+                    white-space: nowrap;
+                   }
+
+                   p + p{
+                    font-size: 14px;
+                    color: rgb(10, 29, 68, 0.54);
+                    font-weight: 400;
+                    margin-top: -5px;
+                   }
+                }
+            }
+
+            .popular-filters{
+               .filter-item{
+                display: flex;
+
+                p{
+                    margin-left: 10px;
+                    color: rgb(10, 29, 68, 0.54);
+                    font-size: 14px;
+                    font-family: var(--font-family-montserrat);
+                }
+               }
             }
         }
 
@@ -342,6 +383,7 @@
            .paginator-container{
             display: flex;
             justify-content: flex-end;
+            margin-top: 60px;
 
             .paginator{
                 display: flex;
@@ -399,5 +441,10 @@
            }
         }
        }
+    }
+
+    .keep-updated{
+      margin-top: -20px;
+      padding-bottom: 100px;
     }
 }

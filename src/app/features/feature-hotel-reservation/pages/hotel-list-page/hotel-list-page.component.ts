@@ -50,25 +50,24 @@ export class HotelListPageComponent implements OnInit {
   }
 
   createPageList(){
-    for(let item=1; item < this.totalPages; item++){
+    for(let item = 0; item < this.totalPages; item++){
       this.totalPageList.push(item);
     }
-
-    console.log(this.totalPageList)
   }
 
   getButtonContent(pageNumber: number, arrayLenght: number): string{
-    pageNumber = pageNumber + 1;
 
     if(arrayLenght === 5){
       return pageNumber.toString();
     }
 
+    pageNumber = pageNumber + 1;
+
     switch(pageNumber){
       case arrayLenght - 1:
         return '...';
        case arrayLenght:
-        return this.totalPages.toString();
+        return arrayLenght.toString();
       default:
         return pageNumber.toString();   
     }
@@ -78,22 +77,28 @@ export class HotelListPageComponent implements OnInit {
     this.currentPage = pageIndex;
     const startIndex = pageIndex * this.pageSize;
     const endIndex = Math.min(startIndex + this.pageSize, this.hotelList.length);
-    console.log(this.hotelList.slice(startIndex, endIndex))
 
     this.pageItems = this.hotelList.slice(startIndex, endIndex);
+    console.log( this.pageItems)
+    this.scrollToTop();
     return this.pageItems;
   }
 
   previousPage(){
     if(this.currentPage === 0){ return; }
     this.pageItems = this.getPageData(this.currentPage -1);
+    this.scrollToTop();
   }
 
   nextPage(){
     if(this.currentPage >= this.totalPages){ return; }
     this.pageItems = this.getPageData(this.currentPage + 1);
+    this.scrollToTop();
   }
 
+  scrollToTop(){
+    window.scrollTo(0, 550)
+  }
 
   private initHotelList(){
     this.hotelList = [
