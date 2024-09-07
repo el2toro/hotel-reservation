@@ -34,6 +34,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AboutPageComponent } from "./pages/about-page/about-page.component";
+import { BlogPageComponent } from "./pages/blog-page/blog-page.component";
+import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
+import { TourPageComponent } from "./pages/tour-page/tour-page.component";
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FrequentlyAskedQuestionComponent,
     OtherNearPropertiesComponent,
     KeepUpdatedComponent,
-    HotelListPageComponent
+    HotelListPageComponent,
+    AboutPageComponent,
+    TourPageComponent,
+    BlogPageComponent,
+    ContactPageComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,

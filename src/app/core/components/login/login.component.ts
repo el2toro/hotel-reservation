@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { UserModel } from 'src/app/models/user.model';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class LoginComponent implements OnInit {
   form: any;
   user = new UserModel();
-  readonly dialog = inject(MatDialog);
+  readonly loginDialog = inject(MatDialogRef<LoginComponent>);
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService
@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   
   createForm(){
      this.form = this.formBuilder.group({
-      username: new FormControl(''),
-      password: new FormControl('')
+      username: ['', Validators.required],
+      password: ['', Validators.required]
    });
 
    this.form.valueChanges.subscribe({
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user).subscribe({
       next: (user) => {
         if(user !== null || user !== undefined){
-          this.dialog.closeAll()
+          this.loginDialog.close()
         }
       },
       error: (error) =>  console.log(error)
