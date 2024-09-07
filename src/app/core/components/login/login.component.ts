@@ -1,0 +1,49 @@
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { UserModel } from 'src/app/models/user.model';
+import { MatDialog } from '@angular/material/dialog';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+  form: any;
+  user = new UserModel();
+  readonly dialog = inject(MatDialog);
+
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) { }
+
+  ngOnInit() {
+    this.createForm();
+  }
+  
+  createForm(){
+     this.form = this.formBuilder.group({
+      username: new FormControl(''),
+      password: new FormControl('')
+   });
+
+   this.form.valueChanges.subscribe({
+    next: () => {
+      this.user.username = this.form.value['username'];
+      this.user.password = this.form.value['password'];
+    }
+   })
+  }
+
+  login() {
+    this.authService.login(this.user).subscribe({
+      next: (user) => {
+        if(user !== null || user !== undefined){
+          this.dialog.closeAll()
+        }
+      },
+      error: (error) =>  console.log(error)
+    })
+  }
+}

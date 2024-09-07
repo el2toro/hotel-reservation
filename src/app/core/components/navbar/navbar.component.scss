@@ -6,6 +6,10 @@
     mat-icon{
         font-family: var(--font-family-montserrat);
         font-weight: 700;
+
+        &:hover{
+           cursor: pointer;
+        }
     }
 
     .navbar-links{

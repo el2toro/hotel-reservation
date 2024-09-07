@@ -28,6 +28,10 @@
             &:active{
                 border: none;
             }
+
+            &::placeholder{
+                font-weight: 200;
+            }
         }
     }
 

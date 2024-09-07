@@ -1,15 +1,15 @@
 <div class="navbar">
-   <mat-icon>HOTBOOK</mat-icon>
+   <mat-icon class="navbar-logo" (click)="goToHome()">HOTBOOK</mat-icon>
   <div class="navbar-links">
     <div class="navigation">
-      <button matButton>Home</button>
-      <button matButton>About</button>
-      <button matButton>Tours</button>
-      <button matButton>Blog</button>
-      <button matButton>Contacts</button>
+      <button matButton (click)="goToHome()">Home</button>
+      <button matButton (click)="goToAbout()">About</button>
+      <button matButton (click)="goToTours()">Tours</button>
+      <button matButton (click)="goToBlog()">Blog</button>
+      <button matButton (click)="goToContacts()">Contacts</button>
     </div>
     <div class="login-button">
-      <button matButton>Login</button>
+      <button matButton (click)="login()">Login</button>
     </div>
   </div>
 </div>
