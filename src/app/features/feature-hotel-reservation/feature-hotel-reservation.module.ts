@@ -12,7 +12,7 @@ import { MarketingSectionComponent } from "./components/marketing-section/market
 import { SubscribeSectionComponent } from "./components/subscribe-section/subscribe-section.component";
 import { CustomerReviewSectionComponent } from "./components/customer-review-section/customer-review-section.component";
 import { HotelSearchComponent } from "./components/hotel-search/hotel-search.component";
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { SingleHotelPageComponent } from "./pages/single-hotel-page/single-hotel-page.component";
 import { ImagesSectionComponent } from "./components/single-hotel-page-components/images-section/images-section.component";
 import { PropertyHighlightsComponent } from "./components/single-hotel-page-components/property-highlights/property-highlights.component";
@@ -21,25 +21,25 @@ import { OverviewComponent } from "./components/single-hotel-page-components/ove
 import { HotelAmenitiesComponent } from "./components/single-hotel-page-components/hotel-amenities/hotel-amenities.component";
 import { LocationComponent } from "./components/single-hotel-page-components/location/location.component";
 import { ReviewComponent } from "./components/single-hotel-page-components/review/review.component";
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatLegacyProgressBarModule as MatProgressBarModule } from '@angular/material/legacy-progress-bar';
 import { FrequentlyAskedQuestionComponent } from "./components/single-hotel-page-components/frequently-asked-question/frequently-asked-question.component";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { OtherNearPropertiesComponent } from "./components/single-hotel-page-components/other-near-properties/other-near-properties.component";
 import { KeepUpdatedComponent } from "./components/single-hotel-page-components/keep-updated/keep-updated.component";
 import { HotelListPageComponent } from "./pages/hotel-list-page/hotel-list-page.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
+import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
+import { MatLegacyPaginatorModule as MatPaginatorModule } from '@angular/material/legacy-paginator';
+import { MatLegacyCheckboxModule as MatCheckboxModule } from '@angular/material/legacy-checkbox';
 import { AboutPageComponent } from "./pages/about-page/about-page.component";
 import { BlogPageComponent } from "./pages/blog-page/blog-page.component";
 import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
 import { TourPageComponent } from "./pages/tour-page/tour-page.component";
 import { MatNativeDateModule } from "@angular/material/core";
 import { LoaderComponent } from "src/app/shared/loader/loader.component";
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatLegacyAutocompleteModule as MatAutocompleteModule } from '@angular/material/legacy-autocomplete';
 
 @NgModule({
   declarations: [
