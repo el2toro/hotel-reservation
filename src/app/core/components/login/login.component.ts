@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   
   createForm(){
      this.form = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', [Validators.required, Validators.minLength, Validators.nullValidator]],
+      password: ['', [Validators.required, Validators.minLength, Validators.nullValidator]]
    });
 
    this.form.valueChanges.subscribe({
@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log(this.form.value)
     this.authService.login(this.user).subscribe({
       next: (user) => {
         if(user !== null || user !== undefined){

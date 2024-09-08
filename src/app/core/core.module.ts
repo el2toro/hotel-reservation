@@ -8,6 +8,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatInputModule } from "@angular/material/input";
 import { ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     RouterModule,
     MatDialogModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   exports: [

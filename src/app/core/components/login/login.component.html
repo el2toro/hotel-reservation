@@ -1,16 +1,29 @@
 <div class="login"> 
   <h2>Sign in</h2>
 
- <form [formGroup]="form" (ngSubmit)="login()">
-    <div class="form"> 
-      <label> Username
-        <input class="credentials-input" formControlName="username" type="text">
-      </label>
-        
-      <label> Password
-        <input class="credentials-input" formControlName="password" type="password">
-      </label>
-    </div>
-    <button>Login</button>
-  </form> 
+ <form class="form" [formGroup]="form" (ngSubmit)="login()">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Please enter username"
+       formControlName="username"
+        required
+      />
+      <mat-error *ngIf="form.touched && form.value['username'] == ''">Username is required!</mat-error>  
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Please enter password"
+        formControlName="password"
+        required
+      />
+      <mat-error *ngIf="form.touched && form.value['password'] == ''">Password is required!</mat-error> 
+    </mat-form-field>
+
+    <button mat-button [disabled]="form.touched && form.invalid">Login</button>
+  </form>  
 </div>
