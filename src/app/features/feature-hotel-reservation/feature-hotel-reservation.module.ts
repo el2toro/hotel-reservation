@@ -12,7 +12,6 @@ import { MarketingSectionComponent } from "./components/marketing-section/market
 import { SubscribeSectionComponent } from "./components/subscribe-section/subscribe-section.component";
 import { CustomerReviewSectionComponent } from "./components/customer-review-section/customer-review-section.component";
 import { HotelSearchComponent } from "./components/hotel-search/hotel-search.component";
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SingleHotelPageComponent } from "./pages/single-hotel-page/single-hotel-page.component";
 import { ImagesSectionComponent } from "./components/single-hotel-page-components/images-section/images-section.component";
@@ -76,7 +75,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     FeatureHotelReservationRoutingModule,
     MatIconModule,
     CommonModule,
-    MatDatepickerModule,
+
     MatFormFieldModule,
     MatProgressBarModule,
     MatExpansionModule,
