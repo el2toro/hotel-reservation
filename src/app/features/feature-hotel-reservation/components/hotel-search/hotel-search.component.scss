@@ -1,90 +1,122 @@
-.hotel-search{
-    height: 115px;
-    background-color: var(--white);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+.hotel-search {
+  height: 115px;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 
-   .item{
+  .item {
     display: flex;
 
-    .to-were, .check-in, .rooms, .guests{
-        margin-top: 5px;
+    .to-were,
+    .check-in,
+    .rooms,
+    .guests {
+      margin-top: 5px;
     }
 
-    .to-were{
-        input{
-            font-size: 20px;
-            font-weight: 200;
-            color: #7D8BA8;
-            font-family: var(--font-family-montserrat);
-            border: none;
+    .to-were {
+      input {
+        font-size: 20px;
+        font-weight: 200;
+        color: #7d8ba8;
+        font-family: var(--font-family-montserrat);
+        border: none;
 
-            &:focus{
-                border: none;
-            }
-
-            &:active{
-                border: none;
-            }
-
-            &::placeholder{
-                font-weight: 200;
-            }
+        &:focus {
+          border: none;
         }
+
+        &:active {
+          border: none;
+        }
+
+        &::placeholder {
+          font-weight: 200;
+        }
+      }
     }
 
-    mat-icon{
-        margin-right: 10px;
-        width: 35px;
-        height: 35px;
+    .check-in {
+      mat-form-field {
+        margin-top: -10px;
+        mat-label {
+          font-size: 20px;
+          font-weight: 600;
+          font-family: var(--font-family-montserrat);
+          color: black;
+        }
+
+        mat-date-range-input {
+          input {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: var(--font-family-montserrat);
+            font-weight: 200;
+            color: #7d8ba8;
+            margin-top: -4px;
+          }
+        }
+
+        mat-datepicker-toggle {
+          margin-left: -45px;
+          color: black;
+          position: absolute;
+          top: -45px;
+        }
+      }
     }
 
-    p{
-     font-size: 20px;
-     font-weight: 600;
-     font-family: var(--font-family-montserrat);
+    mat-icon {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: var(--font-family-montserrat);
     }
 
     p + p {
-        font-weight: 200;
-        color: #7D8BA8;
+      font-weight: 200;
+      color: #7d8ba8;
     }
-   }
+  }
 
-   .item:nth-child(2){
-    mat-icon{
-        width: 30px;
-        height: 30px;
+  .item:nth-child(2) {
+    mat-icon {
+      width: 30px;
+      height: 30px;
     }
-   }
+  }
 
-   .item:nth-child(3), 
-   .item:nth-child(4){
-    mat-icon{
-        width: 24px;
-        height: 24px;
+  .item:nth-child(3),
+  .item:nth-child(4) {
+    mat-icon {
+      width: 24px;
+      height: 24px;
     }
-   }
+  }
 
+  .search-box {
+    width: 125px;
+    height: 75px;
+    background-color: var(--main-theme-color);
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
 
-    .search-box{
-        width: 125px;
-        height: 75px;
-        background-color: var(--main-theme-color);
-        border-radius: 20px;
-        text-align: center;
-        align-content: center;
-
-        mat-icon{
-            width: 30px;
-            height: 30px;
-        }
-
-        &:hover{
-            opacity: 0.7;
-            cursor: pointer;
-        }
+    mat-icon {
+      width: 30px;
+      height: 30px;
     }
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
 }

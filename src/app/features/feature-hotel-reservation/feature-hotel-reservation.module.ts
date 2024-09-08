@@ -28,7 +28,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { OtherNearPropertiesComponent } from "./components/single-hotel-page-components/other-near-properties/other-near-properties.component";
 import { KeepUpdatedComponent } from "./components/single-hotel-page-components/keep-updated/keep-updated.component";
 import { HotelListPageComponent } from "./pages/hotel-list-page/hotel-list-page.component";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
@@ -38,6 +38,9 @@ import { AboutPageComponent } from "./pages/about-page/about-page.component";
 import { BlogPageComponent } from "./pages/blog-page/blog-page.component";
 import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
 import { TourPageComponent } from "./pages/tour-page/tour-page.component";
+import { MatNativeDateModule } from "@angular/material/core";
+import { LoaderComponent } from "src/app/shared/loader/loader.component";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,8 @@ import { TourPageComponent } from "./pages/tour-page/tour-page.component";
     AboutPageComponent,
     TourPageComponent,
     BlogPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    LoaderComponent
   ],
   imports: [
     FeatureHotelReservationRoutingModule,
@@ -81,7 +85,10 @@ import { TourPageComponent } from "./pages/tour-page/tour-page.component";
     MatInputModule,
     MatSliderModule,
     MatPaginatorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   exports: []

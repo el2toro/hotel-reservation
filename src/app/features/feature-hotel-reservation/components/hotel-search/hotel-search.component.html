@@ -1,19 +1,46 @@
-<div class="hotel-search">
+<form class="hotel-search" [formGroup]="form">
   <div class="item">
     <mat-icon svgIcon="map-marker-outline"></mat-icon>
     <div class="to-were">
       <p>To where?</p>
-      <input type="text" placeholder="Where are you going?">
-      <!-- <p>Where are you going?</p> -->
+      <input formControlName="where" matInput type="text" placeholder="Where are you going?">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Number</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               formControlName="where"
+               [autocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+
+          <div *ngFor="let option of filteredOptions | async; track option">
+            <mat-option [value]="option">{{option}}</mat-option>
+          </div>
+
+          @for (option of filteredOptions | async; track option) {
+            <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
     </div>
   </div>
 
   <div class="item">
-    <mat-icon svgIcon="calendar-blank"></mat-icon>
     <div class="check-in">
-      <p>Check in - Check out</p>
+       <p>Check in - Check out</p>
      
-      <p>Thu Nov 3 - Fri Nov 5</p>
+      <mat-form-field>
+        <!-- <mat-label>Check in - Check out</mat-label> -->
+        <mat-date-range-input [rangePicker]="picker">
+          <input formControlName="checkIn" matStartDate>
+          <input formControlName="checkOut"matEndDate>
+        </mat-date-range-input>
+       
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
     </div>
   </div>
 
@@ -21,7 +48,7 @@
     <mat-icon svgIcon="bed"></mat-icon>
     <div class="rooms">
       <p>Rooms</p>
-      <p>3</p>
+      <input formControlName="rooms" matInput type="number" placeholder="1">
     </div>
   </div>
 
@@ -29,11 +56,11 @@
     <mat-icon svgIcon="person-fill"></mat-icon>
     <div class="guests">
       <p>Guests</p>
-      <p>3</p>
+      <input formControlName="guests" matInput type="number" placeholder="1">
     </div>
   </div>
 
-  <div class="search-box">
+  <div class="search-box"  (click)="searchHotel()">
     <mat-icon svgIcon="search"></mat-icon>
   </div>
-</div>
+ </form> 
