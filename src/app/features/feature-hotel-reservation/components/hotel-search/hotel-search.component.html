@@ -1,46 +1,48 @@
-<form class="hotel-search" [formGroup]="form">
+<form [formGroup]="form" class="hotel-search" (ngSubmit)="searchHotel()">
   <div class="item">
     <mat-icon svgIcon="map-marker-outline"></mat-icon>
     <div class="to-were">
       <p>To where?</p>
-      <input formControlName="where" matInput type="text" placeholder="Where are you going?">
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Number</mat-label>
-        <input type="text"
-               placeholder="Pick one"
-               aria-label="Number"
-               matInput
-               formControlName="where"
-               [autocomplete]="auto">
-        <mat-autocomplete #auto="matAutocomplete">
+        <mat-form-field class="form-field" matAutocompleteOrigin #origin="matAutocompleteOrigin">
+          <input
+          matInput
+          formControlName="where"
+          [matAutocomplete]="auto"
+          [matAutocompleteConnectedTo]="origin"
+          placeholder="Where are you going?"
+          (keyup)="searchForDestination()"
+          (focus)="searchDestination()">
 
-          <div *ngFor="let option of filteredOptions | async; track option">
-            <mat-option [value]="option">{{option}}</mat-option>
-          </div>
-
-          <!-- @for (option of filteredOptions | async; track option) {
-            <mat-option [value]="option">{{option}}</mat-option>
-          } -->
-        </mat-autocomplete>
-      </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <ng-template ngFor let-option [ngForOf]="filteredOptions | async">
+              <mat-option [value]="option">
+                
+                <div style="display: block; height: 30px;">
+                  <p style="font-weight: 600;">{{ option }}</p>
+                  <p style="font-size: 12px; margin-top: -20px;">{{ option }}</p>
+                </div>                              
+              </mat-option>
+             </ng-template>
+          </mat-autocomplete>
+        </mat-form-field>  
     </div>
   </div>
 
   <div class="item">
+    <mat-icon svgIcon="calendar-blank"></mat-icon>
     <div class="check-in">
        <p>Check in - Check out</p>
-     
-      <!-- <mat-form-field>
-        <mat-label>Check in - Check out</mat-label> 
-        <mat-date-range-input [rangePicker]="picker">
-          <input formControlName="checkIn" matStartDate>
-          <input formControlName="checkOut"matEndDate>
-        </mat-date-range-input>
        
+      <mat-form-field class="form-field">
+        <mat-date-range-input [rangePicker]="picker">
+          <input formControlName="checkIn" matStartDate placeholder="Fri 05/24">
+          <input formControlName="checkOut" matEndDate placeholder="Mon 05/24">
+        </mat-date-range-input>    
+        
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field> -->
+       <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
     </div>
   </div>
 
@@ -48,7 +50,9 @@
     <mat-icon svgIcon="bed"></mat-icon>
     <div class="rooms">
       <p>Rooms</p>
-      <input formControlName="rooms" matInput type="number" placeholder="1">
+      <mat-form-field class="form-field" style="width: 100px;">
+        <input formControlName="rooms" matInput type="number" placeholder="1">
+      </mat-form-field>
     </div>
   </div>
 
@@ -56,11 +60,13 @@
     <mat-icon svgIcon="person-fill"></mat-icon>
     <div class="guests">
       <p>Guests</p>
-      <input formControlName="guests" matInput type="number" placeholder="1">
+      <mat-form-field class="form-field" style="width: 100px;">
+        <input formControlName="guests" matInput type="number" placeholder="1">
+      </mat-form-field>
     </div>
   </div>
 
   <div class="search-box"  (click)="searchHotel()">
     <mat-icon svgIcon="search"></mat-icon>
   </div>
- </form> 
+</form>

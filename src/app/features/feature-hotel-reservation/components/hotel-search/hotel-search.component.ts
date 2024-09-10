@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, Observable, startWith } from 'rxjs';
-
-class HotelSearchModel{
-  whereToGo = '';
-  checkIn = null;
-  checkOut = null;
-  rooms = null;
-  guests = null;
-}
+import { HotelReservationService } from '../../services/hotel-reservation.service';
+import { HotelSearchModel } from 'src/app/models/hotel-search.mode';
 
 @Component({
   selector: 'app-hotel-search',
@@ -17,31 +11,41 @@ class HotelSearchModel{
   styleUrls: ['./hotel-search.component.scss']
 })
 
-
 export class HotelSearchComponent implements OnInit {
   form: any;
   searchModel = new HotelSearchModel();
 
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions = new Observable<string[]>();
+  options: string[] = [];
+  filteredOptions = new Observable<string>();
 
   constructor(private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private hotelReservationService: HotelReservationService
   ) { }
 
   ngOnInit() {
     this.createForm();
-
-    this.filteredOptions = this.form.value['where'].valueChanges.pipe(
-      startWith(''),
-      //map(value => this._filter(value || '')),
-    );
+    this.initOptions();
   }
 
-  private _filter(value: string): string[] {
+  private initOptions(){
+    this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+        next: (destinations) => {
+          this.options = destinations.map((destination: any) => destination.city)
+  
+          this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
+            startWith(''),
+            map((value: any) => this._filter(value || '')),
+          );
+          console.log(this.options)
+        }
+       })
+  }
+
+  private _filter(value: string): any {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.options.filter(option => option.toLowerCase().includes(filterValue))
   }
 
   createForm(){
@@ -67,7 +71,28 @@ export class HotelSearchComponent implements OnInit {
  searchHotel() {
    console.log(this.searchModel)
 
+   this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+    next: (destinations) => destinations.map((destination: any) => this.options.push(destination.country))
+   })
+
    this.router.navigate(['/hotel-list'])
+  }
+
+  searchForDestination(){
+    this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+      next: (destinations) => this.options = destinations.map((destination: any) =>  destination.city)
+     })
+  }
+
+  searchDestination(){
+    // console.log('is searching')
+    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+    //   next: (destinations) => {
+    //     this.options = destinations.map((destination: any) => destination.city)
+
+    //     console.log(this.options)
+    //   }
+    //  })
   }
 }
 

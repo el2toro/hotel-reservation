@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Food {
   value: string;
@@ -37,7 +38,7 @@ export class HotelListPageComponent implements OnInit {
   hotelList: Hotel[] = [] 
   panelOpenState = false;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.initHotelList();
@@ -98,6 +99,10 @@ export class HotelListPageComponent implements OnInit {
 
   scrollToTop(){
     window.scrollTo(0, 550)
+  }
+
+  choseRooms(){
+    this.router.navigate(['/room'])
   }
 
   private initHotelList(){

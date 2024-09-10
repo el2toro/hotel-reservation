@@ -9,28 +9,20 @@
   .item {
     display: flex;
 
-    .to-were,
-    .check-in,
-    .rooms,
-    .guests {
-      margin-top: 5px;
+    .form-field{
+      margin-top: 8px;
+
+      input{
+        font-size: 16px;
+        font-weight: 200;
+        color: #7d8ba8;
+        font-family: var(--font-family-montserrat);
+      }
     }
 
     .to-were {
       input {
-        font-size: 20px;
-        font-weight: 200;
-        color: #7d8ba8;
-        font-family: var(--font-family-montserrat);
-        border: none;
-
-        &:focus {
-          border: none;
-        }
-
-        &:active {
-          border: none;
-        }
+        margin-top: -3px;
 
         &::placeholder {
           font-weight: 200;
@@ -39,33 +31,7 @@
     }
 
     .check-in {
-      mat-form-field {
-        margin-top: -10px;
-        mat-label {
-          font-size: 20px;
-          font-weight: 600;
-          font-family: var(--font-family-montserrat);
-          color: black;
-        }
 
-        mat-date-range-input {
-          input {
-            font-size: 20px;
-            font-weight: 600;
-            font-family: var(--font-family-montserrat);
-            font-weight: 200;
-            color: #7d8ba8;
-            margin-top: -4px;
-          }
-        }
-
-        mat-datepicker-toggle {
-          margin-left: -45px;
-          color: black;
-          position: absolute;
-          top: -45px;
-        }
-      }
     }
 
     mat-icon {

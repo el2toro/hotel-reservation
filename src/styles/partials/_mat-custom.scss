@@ -77,3 +77,14 @@
         background-color: var(--background);
     }   
 }
+
+.mat-mdc-text-field-wrapper{
+    border: none !important;
+    background-color: white !important;
+    margin-top: -20px;
+}
+
+.mat-mdc-form-field-focus-overlay{
+    background-color: transparent;
+}
+
