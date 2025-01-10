@@ -35,9 +35,8 @@ export class HotelSearchComponent implements OnInit {
   
           this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
             startWith(''),
-            map((value: any) => this._filter(value || '')),
+            map((value: any) => this._filter(value || ''))
           );
-          console.log(this.options)
         }
        })
   }
@@ -82,7 +81,7 @@ export class HotelSearchComponent implements OnInit {
     this.hotelReservationService.getDestinations(this.searchModel).subscribe({
       next: (destinations) => this.options = destinations.map((destination: any) =>  destination.city)
      })
-  }
+  } 
 
   searchDestination(){
     // console.log('is searching')

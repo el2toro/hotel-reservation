@@ -46,7 +46,7 @@ export class NavbarComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
-      //data: {name: this.name(), animal: this.animal()},
+      //data: {name: this.name(), animal: this.animal()}
       panelClass: 'dialog-custom-panel'
     });
 

@@ -12,6 +12,7 @@ import { MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dia
 export class LoginComponent implements OnInit {
   form: any;
   user = new UserModel();
+  error = {status: '', statusText: '', error: ''};
   readonly loginDialog = inject(MatDialogRef<LoginComponent>);
 
   constructor(private formBuilder: FormBuilder,
@@ -43,7 +44,11 @@ export class LoginComponent implements OnInit {
           this.loginDialog.close()
         }
       },
-      error: (error) =>  console.log(error)
+      error: (error) =>  {this.error = error, console.log(this.error)}
     })
+  }
+
+  onKeyUp(){
+   this.error.status = '';
   }
 }

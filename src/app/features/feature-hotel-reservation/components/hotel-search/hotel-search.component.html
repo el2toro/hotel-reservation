@@ -16,8 +16,7 @@
 
           <mat-autocomplete #auto="matAutocomplete">
             <ng-template ngFor let-option [ngForOf]="filteredOptions | async">
-              <mat-option [value]="option">
-                
+              <mat-option [value]="option">             
                 <div style="display: block; height: 30px;">
                   <p style="font-weight: 600;">{{ option }}</p>
                   <p style="font-size: 12px; margin-top: -20px;">{{ option }}</p>

@@ -7,8 +7,9 @@
       <input
         matInput
         placeholder="Please enter your username"
-       formControlName="username"
+        formControlName="username"
         required
+        (keyup)="onKeyUp()"
       />
       <mat-error *ngIf="form.touched && form.value['username'] == ''">Username is required!</mat-error>  
     </mat-form-field>
@@ -16,14 +17,19 @@
     <mat-form-field>
       <mat-label>Password</mat-label>
       <input
+        type="password"
         matInput
         placeholder="Please enter your password"
         formControlName="password"
         required
+        (keyup)="onKeyUp()"
       />
       <mat-error *ngIf="form.touched && form.value['password'] == ''">Password is required!</mat-error> 
     </mat-form-field>
 
+    <mat-error class="invalid-credentials" *ngIf="error.status == '500'">Invalid username or password!</mat-error> 
+    <mat-error class="invalid-credentials" *ngIf="error.statusText == 'Unknown Error'">Something went wrong, please try again later!</mat-error> 
+    
     <button mat-button [disabled]="form.touched && form.invalid">Login</button>
   </form>  
 </div>
