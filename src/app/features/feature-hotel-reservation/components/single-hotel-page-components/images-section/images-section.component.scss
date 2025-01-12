@@ -54,6 +54,13 @@ margin-top: -20px;
 
         }
 
+        .reserve-button{
+          button:hover{
+            opacity: 0.9;
+            cursor: pointer;
+          }
+        }
+
        button{
         width: 272px;
         height: 42px;

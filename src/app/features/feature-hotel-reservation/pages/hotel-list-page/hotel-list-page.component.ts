@@ -1,30 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HotelReservationService } from '../../services/hotel-reservation.service';
+import { HotelModel } from 'src/app/models/hotel.model';
+import { HotelCommonService } from '../../services/hotel.common.service';
 
 interface Food {
   value: string;
   viewValue: string;
-}
-
-interface Location {
-  address: string;
-  city: string;
-  state: string;
-  country: string;
-  postalCode: string;
-}
-
-interface Hotel {
-  hotelId: number,
-  name: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
-  isAvailable: boolean;
-  rating: number;
-  image: string;
-  location: Location;
 }
 
 @Component({
@@ -38,7 +20,7 @@ export class HotelListPageComponent implements OnInit {
   pageSize = 5;
   currentPage = 0;
   totalPages = 0;
-  hotelList = <Hotel[]>[];
+  hotelList = <HotelModel[]>[];
   totalPageList: number[] = [];
 
   foods: Food[] = [
@@ -50,7 +32,8 @@ export class HotelListPageComponent implements OnInit {
   panelOpenState = false;
   
   constructor(private router: Router, 
-    private hotelReservationService: HotelReservationService) { }
+    private hotelReservationService: HotelReservationService, 
+    private hotelCommonService: HotelCommonService) { }
 
   ngOnInit() {
     this.getAllHotels();
@@ -64,7 +47,7 @@ export class HotelListPageComponent implements OnInit {
 
   getAllHotels(){
     this.hotelReservationService.getAllHotels().subscribe({
-      next: (hotelList: Hotel[]) => {
+      next: (hotelList: HotelModel[]) => {
         this.hotelList = hotelList;
         this.totalItems = this.hotelList.length;
         this.totalPages = this.totalItems / this.pageSize;
@@ -126,12 +109,6 @@ export class HotelListPageComponent implements OnInit {
   }
 
   getHotelRating(rating: number): number[]{
-    console.log(rating)
-    let stars = [];
-    for(let i = 0; i < rating; i++){
-      stars.push(i);
-    }
-
-    return stars;
+    return this.hotelCommonService.getHotelRating(rating);
   }
 }

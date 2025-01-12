@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotelReservationService } from '../../services/hotel-reservation.service';
+import { HotelModel } from 'src/app/models/hotel.model';
+import { RoomModel } from 'src/app/models/room.model';
 
 @Component({
   selector: 'app-single-hotel-page',
@@ -10,16 +12,22 @@ import { HotelReservationService } from '../../services/hotel-reservation.servic
 export class SingleHotelPageComponent implements OnInit {
 
   hotelId = 0;
+  hotel: HotelModel = new HotelModel;
+  rooms = <RoomModel[]>[];
 
   constructor(private activatedRoute: ActivatedRoute, 
     private hotelReservationService: HotelReservationService) { }
 
-
   ngOnInit() {
     this.hotelId = this.activatedRoute.snapshot.params["id"];
 
+    this.getHotelById();
+  }
+
+  getHotelById(){
     this.hotelReservationService.getHotelById(this.hotelId).subscribe({
-      next: (hotel) => console.log(hotel)
+      next: (hotel) => this.hotel = hotel,
+      error: (error) => console.log(error)
     })
   }
 }
