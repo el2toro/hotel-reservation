@@ -311,30 +311,26 @@
 
       </div>
       <div class="hotel-search-list">
-        <div class="hotel-search-list-item" *ngFor="let hotel of pageItems">
+        <div class="hotel-search-list-item" *ngFor="let hotel of hotelList">
           <div class="image">
-            <img src="{{ hotel.image }}" alt="img">
+            <img src="assets/images/hotel-1.jpg" alt="img">
           </div>
           <div class="hotel-about">
             <h3>{{ hotel.name }}</h3>
             <div class="star-rating">
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
-              <mat-icon svgIcon="star"></mat-icon>
+              <mat-icon svgIcon="star" *ngFor="let star of getHotelRating(hotel.rating)"></mat-icon>
             </div>
 
-            <p>{{ hotel.location }}</p>
+            <p>{{ hotel.location.address }}, {{ hotel.location.city }}, {{ hotel.location.country }}, {{ hotel.location.state }}</p>
 
             <div class="price-details">
               <div class="charges">
-                <p>{{ hotel.price }} <span> / Night</span></p>
-                <p>{{ hotel.charges }} Taxes and charges</p>
+                <p>150 <span> / Night</span></p>
+                <p>100 Taxes and charges</p>
               </div>
 
               <div class="choose-rooms-button">
-                <button matButton (click)="choseRooms()">Choose rooms</button>
+                <button matButton (click)="choseRooms(hotel.hotelId)">Choose rooms</button>
               </div>
             </div>
           </div>

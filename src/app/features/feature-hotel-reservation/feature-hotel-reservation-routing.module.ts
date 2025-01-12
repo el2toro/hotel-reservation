@@ -11,7 +11,7 @@ import { ContactPageComponent } from "./pages/contact-page/contact-page.componen
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'room', component: SingleHotelPageComponent },
+  { path: 'room/:id', component: SingleHotelPageComponent },
   { path: 'hotel-list', component: HotelListPageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'tours', component: TourPageComponent },

@@ -29,16 +29,16 @@ export class HotelSearchComponent implements OnInit {
   }
 
   private initOptions(){
-    this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-        next: (destinations) => {
-          this.options = destinations.map((destination: any) => destination.city)
+    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+    //     next: (destinations) => {
+    //       this.options = destinations.map((destination: any) => destination.city)
   
-          this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
-            startWith(''),
-            map((value: any) => this._filter(value || ''))
-          );
-        }
-       })
+    //       this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
+    //         startWith(''),
+    //         map((value: any) => this._filter(value || ''))
+    //       );
+    //     }
+    //    })
   }
 
   private _filter(value: string): any {
@@ -70,17 +70,17 @@ export class HotelSearchComponent implements OnInit {
  searchHotel() {
    console.log(this.searchModel)
 
-   this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-    next: (destinations) => destinations.map((destination: any) => this.options.push(destination.country))
-   })
+  //  this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+  //   next: (destinations) => destinations.map((destination: any) => this.options.push(destination.country))
+  //  })
 
    this.router.navigate(['/hotel-list'])
   }
 
   searchForDestination(){
-    this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-      next: (destinations) => this.options = destinations.map((destination: any) =>  destination.city)
-     })
+    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
+    //   next: (destinations) => this.options = destinations.map((destination: any) =>  destination.city)
+    //  })
   } 
 
   searchDestination(){

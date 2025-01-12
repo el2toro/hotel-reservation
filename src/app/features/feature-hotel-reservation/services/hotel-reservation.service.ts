@@ -10,7 +10,15 @@ export class HotelReservationService{
 
   constructor(private httpClient: HttpClient){}
 
-  public getDestinations(searchModel: HotelSearchModel) : Observable<any>{
-   return this.httpClient.post<any>(this.baseUrl + 'GetDestinations', searchModel);
+  // public getDestinations(searchModel: HotelSearchModel) : Observable<any>{
+  //  return this.httpClient.post<any>(this.baseUrl + 'GetDestinations', searchModel);
+  // }
+
+  public getAllHotels() : Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl + 'GetAll');
+  }
+
+  public getHotelById(hotelId: number) : Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl + 'GetById', {params: {hotelId}});
   }
 }
