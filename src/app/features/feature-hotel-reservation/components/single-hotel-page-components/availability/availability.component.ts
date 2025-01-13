@@ -10,10 +10,9 @@ import { AmenityModel } from 'src/app/models/amenity.model';
   styleUrls: ['./availability.component.scss']
 })
 export class AvailabilityComponent implements OnInit {
-rooms = <RoomModel[]>[];
-amenities = <AmenityModel[]>[];
-
-hotelId = 0;
+  rooms = <RoomModel[]>[];
+  amenities = <AmenityModel[]>[];
+  hotelId = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
     private hotelReservationService: HotelReservationService
@@ -37,5 +36,9 @@ hotelId = 0;
       next: (amenities) => this.amenities = amenities,
       error: (error) => console.log(error)
     })
+  }
+
+  chooseRoom(roomId: number) {
+    throw new Error('Method not implemented.');
   }
 }

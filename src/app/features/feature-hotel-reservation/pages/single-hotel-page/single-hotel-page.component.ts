@@ -22,11 +22,19 @@ export class SingleHotelPageComponent implements OnInit {
     this.hotelId = this.activatedRoute.snapshot.params["id"];
 
     this.getHotelById();
+    this.getRooms();
   }
 
   getHotelById(){
     this.hotelReservationService.getHotelById(this.hotelId).subscribe({
       next: (hotel) => this.hotel = hotel,
+      error: (error) => console.log(error)
+    })
+  }
+
+  getRooms(){
+    this.hotelReservationService.getRooms(this.hotelId).subscribe({
+      next: (rooms) => {this.rooms = rooms, console.log(this.rooms)},
       error: (error) => console.log(error)
     })
   }

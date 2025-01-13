@@ -1,7 +1,8 @@
 <div class="confirmation-dialog">
  <h1>Please confirm reservation</h1>
 
- <h3>Hotel name: {{ hotel.name }}</h3>
+ <h3>Hotel name: {{ data.hotel.name }}</h3>
+ <h3>Total amount: {{ roomPrice }}$</h3>
 
  <div>
   <button (click)="close()">Cancel</button>
