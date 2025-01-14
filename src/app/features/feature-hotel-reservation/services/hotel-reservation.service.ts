@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { CheckOutModel } from "src/app/core/models/checkout.model";
 import { AmenityModel } from "src/app/models/amenity.model";
 import { BookingModel } from "src/app/models/booking.model";
 import { HotelModel } from "src/app/models/hotel.model";
@@ -36,9 +35,5 @@ export class HotelReservationService{
 
   public bookRoom(booking: BookingModel) : Observable<any>{
     return this.httpClient.post<any>(this.baseUrl + 'BookRoom', booking);
-  }
-
-  public checkOut(checkout: CheckOutModel) : Observable<any>{
-    return this.httpClient.post<any>(this.baseUrl + 'CheckOut', checkout);
   }
 }

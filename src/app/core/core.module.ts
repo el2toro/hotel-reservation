@@ -9,7 +9,7 @@ import { MatLegacyDialogModule as MatDialogModule } from "@angular/material/lega
 import { MatLegacyInputModule as MatInputModule } from "@angular/material/legacy-input";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
-import { StripePaymentComponent } from "./stripe-payment/stripe-payment.component";
+import { StripeCheckoutPageComponent } from "./pages/stripe/stripe-checkout-page/stripe-checkout-page.component";
 import { StripeSuccessPageComponent } from "./pages/stripe/stripe-success-page/stripe-success-page.component";
 import { StripeCancelPageComponent } from "./pages/stripe/stripe-cancel-page/stripe-cancel-page.component";
 import { CoreRoutingModule } from "./core.routing.module";
@@ -21,7 +21,7 @@ import { CoreRoutingModule } from "./core.routing.module";
     FooterComponent,
     NavbarComponent,
     LoginComponent,
-    StripePaymentComponent,
+    StripeCheckoutPageComponent,
     StripeSuccessPageComponent,
     StripeCancelPageComponent
   ],

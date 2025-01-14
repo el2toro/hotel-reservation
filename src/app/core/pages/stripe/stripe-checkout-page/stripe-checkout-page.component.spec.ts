@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { StripePaymentComponent } from './stripe-payment.component';
+import { StripeCheckoutPageComponent } from './stripe-checkout-page.component';
 
 describe('StripePaymentComponent', () => {
-  let component: StripePaymentComponent;
-  let fixture: ComponentFixture<StripePaymentComponent>;
+  let component: StripeCheckoutPageComponent;
+  let fixture: ComponentFixture<StripeCheckoutPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StripePaymentComponent ]
+      declarations: [ StripeCheckoutPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StripePaymentComponent);
+    fixture = TestBed.createComponent(StripeCheckoutPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

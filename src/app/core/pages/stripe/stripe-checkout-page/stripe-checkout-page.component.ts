@@ -1,42 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelReservationService } from 'src/app/features/feature-hotel-reservation/services/hotel-reservation.service';
 import { StripeFactoryService, StripeInstance } from 'ngx-stripe';
-import { environment } from "../../../environments/environment"
+import { environment } from "../../../../../environments/environment"
 import { switchMap } from 'rxjs';
-import { CheckOutModel } from '../models/checkout.model';
-
-interface IStripeSession {
-  id: string;
-}
+import { CheckoutService } from '../../../services/checkout.service';
+import { CheckoutModel } from '../../../models/checkout.model';
+import { CheckoutResponseModel } from '../../../models/checkout-response.model';
 
 @Component({
-  selector: 'app-stripe-payment',
-  templateUrl: './stripe-payment.component.html',
-  styleUrls: ['./stripe-payment.component.scss']
+  selector: 'app-stripe-checkout-page',
+  templateUrl: './stripe-checkout-page.component.html',
+  styleUrls: ['./stripe-checkout-page.component.scss']
 })
  
-export class StripePaymentComponent implements OnInit {
+export class StripeCheckoutPageComponent implements OnInit {
 
-  constructor(private hotelReservationService: HotelReservationService,
+  constructor(private checkoutService: CheckoutService,
     private stripeFactory: StripeFactoryService) { }
 
     public stripe!: StripeInstance;
-    public stripeAmount!: number;
+
     isLoading: boolean = false;
 
   
   ngOnInit() {
     this.stripe = this.stripeFactory.create(environment.stripePublicKey);
-    this.stripeAmount = 100;
   }
 
   checkOut(){
     //TODO: use a variaable for model
-     this.hotelReservationService.checkOut(this.mapToCheckOutModel())
+     this.checkoutService.createCheckoutSession(this.mapToCheckoutModel())
      .pipe(
-      switchMap((response) => {
-        console.log(response.sessionId)
-        const session: IStripeSession = response as IStripeSession;
+      switchMap((response: CheckoutResponseModel) => {
         return this.stripe.redirectToCheckout({ sessionId: response.sessionId });
       })
      ).subscribe({
@@ -45,8 +39,8 @@ export class StripePaymentComponent implements OnInit {
      })
   }
 
-  mapToCheckOutModel(): CheckOutModel{
-   let checkOut = new CheckOutModel();
+  mapToCheckoutModel(): CheckoutModel{
+   let checkOut = new CheckoutModel();
    checkOut.successUrl = environment.stripe.successUrl;
    checkOut.cancelUrl = environment.stripe.cancelUrl;
    checkOut.amount = 3000;

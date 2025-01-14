@@ -1,4 +1,4 @@
-export class CheckOutModel{
+export class CheckoutModel{
     productName = '';
     productDescription = '';
     amount = 0;

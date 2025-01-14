@@ -1,11 +1,10 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HotelModel } from 'src/app/models/hotel.model';
 import { HotelCommonService } from '../../../services/hotel.common.service';
 import { MatDialog } from '@angular/material/dialog';
-import { BookingConfirmationDialogComponent } from '../../booking-confirmation-dialog/booking-confirmation-dialog.component';
 import { RoomModel } from 'src/app/models/room.model';
 import { HotelReservationService } from '../../../services/hotel-reservation.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-images-section',
@@ -20,7 +19,8 @@ export class ImagesSectionComponent implements OnInit {
   constructor(private hotelCommonService: HotelCommonService, 
     public dialog: MatDialog,
     private hotelReservationService: HotelReservationService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     this.hotelId = this.activatedRoute.snapshot.params["id"];
@@ -29,9 +29,10 @@ export class ImagesSectionComponent implements OnInit {
   }
 
   reserveNow() {
-    this.dialog.open(BookingConfirmationDialogComponent, {
-      data: { hotel: this.hotel, roomId: this.rooms[0].roomId }
-    })
+    // this.dialog.open(BookingConfirmationDialogComponent, {
+    //   data: { hotel: this.hotel, roomId: this.rooms[0].roomId }
+    // })
+    this.router.navigate(['/checkout']);
   }
 
   getHotelRating(rating: number): number[]{
