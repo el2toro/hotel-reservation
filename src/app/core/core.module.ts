@@ -7,8 +7,12 @@ import { RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { MatLegacyDialogModule as MatDialogModule } from "@angular/material/legacy-dialog";
 import { MatLegacyInputModule as MatInputModule } from "@angular/material/legacy-input";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { StripePaymentComponent } from "./stripe-payment/stripe-payment.component";
+import { StripeSuccessPageComponent } from "./pages/stripe/stripe-success-page/stripe-success-page.component";
+import { StripeCancelPageComponent } from "./pages/stripe/stripe-cancel-page/stripe-cancel-page.component";
+import { CoreRoutingModule } from "./core.routing.module";
 
 
 @NgModule({
@@ -16,15 +20,20 @@ import { CommonModule } from "@angular/common";
     ShellComponent,
     FooterComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    StripePaymentComponent,
+    StripeSuccessPageComponent,
+    StripeCancelPageComponent
   ],
   imports: [
+    CoreRoutingModule,
     MatIconModule,
     RouterModule,
     MatDialogModule,
     MatInputModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   exports: [

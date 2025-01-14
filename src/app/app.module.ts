@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
 
     // Angular Material
-    MatDialogModule
+    MatDialogModule,
+
+    NgxStripeModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -33,6 +36,7 @@ export class AppModule {
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {
 
+                // TODO: use service to register icons
                 this.matIconRegistry.addSvgIcon('plane', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/plane.svg'));
                 this.matIconRegistry.addSvgIcon('dashed-line', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/dashed-line.svg'));
                 this.matIconRegistry.addSvgIcon('map-marker-outline', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/svg/map-marker-outline.svg'));

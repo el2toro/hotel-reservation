@@ -8,7 +8,6 @@ import { BlogPageComponent } from "./pages/blog-page/blog-page.component";
 import { TourPageComponent } from "./pages/tour-page/tour-page.component";
 import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
 
-
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'room/:id', component: SingleHotelPageComponent },

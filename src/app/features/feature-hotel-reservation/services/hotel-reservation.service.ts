@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { CheckOutModel } from "src/app/core/models/checkout.model";
 import { AmenityModel } from "src/app/models/amenity.model";
 import { BookingModel } from "src/app/models/booking.model";
-import { HotelSearchModel } from "src/app/models/hotel-search.mode";
 import { HotelModel } from "src/app/models/hotel.model";
 import { RoomModel } from "src/app/models/room.model";
 
@@ -13,10 +13,6 @@ export class HotelReservationService{
  private baseUrl = 'https://localhost:7092/HotelReservation/';
 
   constructor(private httpClient: HttpClient){}
-
-  // public getDestinations(searchModel: HotelSearchModel) : Observable<any>{
-  //  return this.httpClient.post<any>(this.baseUrl + 'GetDestinations', searchModel);
-  // }
 
   public getAllHotels() : Observable<HotelModel[]>{
     return this.httpClient.get<HotelModel[]>(this.baseUrl + 'GetAll');
@@ -40,5 +36,9 @@ export class HotelReservationService{
 
   public bookRoom(booking: BookingModel) : Observable<any>{
     return this.httpClient.post<any>(this.baseUrl + 'BookRoom', booking);
+  }
+
+  public checkOut(checkout: CheckOutModel) : Observable<any>{
+    return this.httpClient.post<any>(this.baseUrl + 'CheckOut', checkout);
   }
 }

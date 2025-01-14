@@ -1,0 +1,29 @@
+.confirmation-dialog{
+    padding: 30px;
+    
+    h1{
+        font-weight: 600;
+        font-family: var(--font-family-montserrat);
+    }
+
+    .action-buttons{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        button{
+            width: 272px;
+            height: 42px;
+            background-color: var(--main-theme-color);
+            color: var(--white);
+            border-radius: 10px;
+            font-family: var(--font-family-montserrat);
+            font-size: 16px;
+        }
+
+        button:hover{
+            opacity: 0.9;
+            cursor: pointer;
+        }
+    }
+}

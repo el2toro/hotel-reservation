@@ -2,9 +2,10 @@
  <h1>Please confirm reservation</h1>
 
  <h3>Hotel name: {{ data.hotel.name }}</h3>
+ <h3>From: 2024/02/02 to 2024/02/09</h3>
  <h3>Total amount: {{ roomPrice }}$</h3>
 
- <div>
+ <div class="action-buttons">
   <button (click)="close()">Cancel</button>
   <button (click)="confirm()">Confirm</button>
  </div>
