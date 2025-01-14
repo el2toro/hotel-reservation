@@ -1,0 +1,142 @@
+.checkout{
+    .heading{
+        text-align: center;
+
+        h1{
+            font-weight: 600;
+            font-size: 30px;
+            font-family: var(--font-family-montserrat);
+            background-color: var(--background);
+            padding: 80px;
+        }
+    }
+
+    .details{
+        
+
+        .hotel-details{
+            padding-left: 50px;
+             padding-right: 50px;
+    
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                    font-family: var(--font-family-montserrat);
+                }
+        }
+
+        .booking-details-section{
+            display: flex;
+
+            .booking-details{
+                width: 100%;
+        
+                .checkin-details-heading{
+                    padding: 10px 50px;
+                    font-size: 16px;
+                        font-weight: 600;
+                        font-family: var(--font-family-montserrat);
+                }
+        
+                .checkin-details{
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    display: flex;
+                    gap: 50px;
+        
+                    .checkin{
+                        text-align: center;
+                        border: 2px solid;
+                        
+                        .week-day{
+                            background-color: var(--main-theme-color);
+                            color: white;
+                            //padding: 10px;
+                        }
+        
+                        p{
+                            font-family: var(--font-family-montserrat);
+                        }
+                    }
+        
+                    .checkout{
+                        text-align: center;
+                        border: 2px solid;
+        
+                        .week-day{
+                            background-color: var(--main-theme-color);
+                            color: white;
+                            //padding: 10px;
+                        }
+        
+                        p{
+                            font-family: var(--font-family-montserrat);
+                        }
+                    }
+                }
+        
+                .room-details{
+                    padding: 10px 50px;
+        
+                    h3{
+                        font-size: 16px;
+                        font-weight: 600;
+                        font-family: var(--font-family-montserrat);
+                    }
+        
+                    table{
+                        font-family: var(--font-family-montserrat);
+                        width: 100%;
+                    }
+
+                    tr{
+                      height: 30px;
+                    }
+        
+                    th, td{
+                        text-align: left;
+                        
+                    }
+        
+                }
+            }
+    
+            .image-summary{
+                width: 40%;
+
+                img{
+                    width: 100%;
+                    height: 90%;
+                    object-fit: cover;
+                    border-radius: 15px;
+                    padding: 50px 50px 40px 0px;
+                    
+                }
+            }
+        }
+    }
+
+    .action-buttons{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 50px;
+        gap: 10px;
+
+        button{
+            background-color: var(--main-theme-color);
+            color: white;
+            font-family: var(--font-family-montserrat);
+            height: 50px;
+            border-radius: 15px;
+            padding: 10px 50px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+        }
+
+        button:hover{
+            opacity: 0.9;
+            cursor: pointer;
+        }
+    }
+}

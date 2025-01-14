@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs';
 import { CheckoutService } from '../../../services/checkout.service';
 import { CheckoutModel } from '../../../models/checkout.model';
 import { CheckoutResponseModel } from '../../../models/checkout-response.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-stripe-checkout-page',
@@ -15,7 +16,8 @@ import { CheckoutResponseModel } from '../../../models/checkout-response.model';
 export class StripeCheckoutPageComponent implements OnInit {
 
   constructor(private checkoutService: CheckoutService,
-    private stripeFactory: StripeFactoryService) { }
+    private stripeFactory: StripeFactoryService,
+    private location: Location) { }
 
     public stripe!: StripeInstance;
 
@@ -26,7 +28,7 @@ export class StripeCheckoutPageComponent implements OnInit {
     this.stripe = this.stripeFactory.create(environment.stripePublicKey);
   }
 
-  checkOut(){
+  checkout(){
     //TODO: use a variaable for model
      this.checkoutService.createCheckoutSession(this.mapToCheckoutModel())
      .pipe(
@@ -50,5 +52,9 @@ export class StripeCheckoutPageComponent implements OnInit {
    checkOut.quantity = 1;
 
    return checkOut;
+  }
+
+  cancel(){
+    this.location.back()
   }
 }
