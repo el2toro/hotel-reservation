@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { map, Observable, startWith } from 'rxjs';
 import { HotelReservationService } from '../../services/hotel-reservation.service';
 import { HotelSearchModel } from 'src/app/models/hotel-search.mode';
+import { LocationModel } from 'src/app/models/location.model';
+import { DataSignalService } from '../../services/data.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-hotel-search',
@@ -12,15 +15,18 @@ import { HotelSearchModel } from 'src/app/models/hotel-search.mode';
 })
 
 export class HotelSearchComponent implements OnInit {
+  @Output() search: EventEmitter<any> = new EventEmitter;
+
   form: any;
   searchModel = new HotelSearchModel();
 
-  options: string[] = [];
-  filteredOptions = new Observable<string>();
+  options =<LocationModel[]>[];
+  filteredOptions = new Observable<LocationModel[]>();
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
-    private hotelReservationService: HotelReservationService
+    private hotelReservationService: HotelReservationService,
+    private dataSignalService: DataSignalService
   ) { }
 
   ngOnInit() {
@@ -29,22 +35,22 @@ export class HotelSearchComponent implements OnInit {
   }
 
   private initOptions(){
-    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-    //     next: (destinations) => {
-    //       this.options = destinations.map((destination: any) => destination.city)
+    this.hotelReservationService.getLocations().subscribe({
+        next: (locations) => {
+          this.options = locations.map((locations: LocationModel[]) => this.options = locations)
   
-    //       this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
-    //         startWith(''),
-    //         map((value: any) => this._filter(value || ''))
-    //       );
-    //     }
-    //    })
+          this.filteredOptions = this.form.get(['where']).valueChanges.pipe(
+            startWith(''),
+            map((value: any) => this._filter(value || ''))
+          );
+        }
+       })
   }
 
   private _filter(value: string): any {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue))
+    return this.options.filter(option => option.city.toLowerCase().includes(filterValue))
   }
 
   createForm(){
@@ -59,8 +65,8 @@ export class HotelSearchComponent implements OnInit {
   this.form.valueChanges.subscribe({
    next: () => {
      this.searchModel.whereToGo = this.form.value['where'];
-     this.searchModel.checkIn = this.form.value['checkIn'];
-     this.searchModel.checkOut = this.form.value['checkOut'];
+     this.searchModel.checkIn = this.dateFormat(this.form.value['checkIn']);
+     this.searchModel.checkOut = this.dateFormat(this.form.value['checkOut']);
      this.searchModel.rooms = this.form.value['rooms'];
      this.searchModel.guests = this.form.value['guests'];
    }
@@ -68,31 +74,14 @@ export class HotelSearchComponent implements OnInit {
  }
 
  searchHotel() {
-   console.log(this.searchModel)
-
-  //  this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-  //   next: (destinations) => destinations.map((destination: any) => this.options.push(destination.country))
-  //  })
-
+   this.dataSignalService.setData(this.searchModel);
+   this.search.emit(this.searchModel)
    this.router.navigate(['/hotel-list'])
   }
 
-  searchForDestination(){
-    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-    //   next: (destinations) => this.options = destinations.map((destination: any) =>  destination.city)
-    //  })
+  dateFormat(date: Date): string{
+    return formatDate(date, 'yyyy/MM/dd', 'en-US')
   } 
-
-  searchDestination(){
-    // console.log('is searching')
-    // this.hotelReservationService.getDestinations(this.searchModel).subscribe({
-    //   next: (destinations) => {
-    //     this.options = destinations.map((destination: any) => destination.city)
-
-    //     console.log(this.options)
-    //   }
-    //  })
-  }
 }
 
 

@@ -10,16 +10,14 @@
           formControlName="where"
           [matAutocomplete]="auto"
           [matAutocompleteConnectedTo]="origin"
-          placeholder="Where are you going?"
-          (keyup)="searchForDestination()"
-          (focus)="searchDestination()">
+          placeholder="Where are you going?">
 
           <mat-autocomplete #auto="matAutocomplete">
             <ng-template ngFor let-option [ngForOf]="filteredOptions | async">
-              <mat-option [value]="option">             
+              <mat-option [value]="option.city">             
                 <div style="display: block; height: 30px;">
-                  <p style="font-weight: 600;">{{ option }}</p>
-                  <p style="font-size: 12px; margin-top: -20px;">{{ option }}</p>
+                  <p style="font-weight: 600;">{{ option.city }}</p>
+                  <p style="font-size: 12px; margin-top: -20px;">{{ option.country }}</p>
                 </div>                              
               </mat-option>
              </ng-template>

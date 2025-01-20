@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { AmenityModel } from "src/app/models/amenity.model";
 import { BookingModel } from "src/app/models/booking.model";
+import { HotelSearchModel } from "src/app/models/hotel-search.mode";
 import { HotelModel } from "src/app/models/hotel.model";
 import { RoomModel } from "src/app/models/room.model";
 
@@ -13,8 +14,8 @@ export class HotelReservationService{
 
   constructor(private httpClient: HttpClient){}
 
-  public getAllHotels() : Observable<HotelModel[]>{
-    return this.httpClient.get<HotelModel[]>(this.baseUrl + 'GetAll');
+  public getAllHotels(searchModel: HotelSearchModel) : Observable<HotelModel[]>{
+    return this.httpClient.post<HotelModel[]>(this.baseUrl + 'GetAll', searchModel);
   }
 
   public getHotelById(hotelId: number) : Observable<HotelModel>{
@@ -35,5 +36,9 @@ export class HotelReservationService{
 
   public bookRoom(booking: BookingModel) : Observable<any>{
     return this.httpClient.post<any>(this.baseUrl + 'BookRoom', booking);
+  }
+
+  public getLocations() : Observable<any>{
+    return this.httpClient.get<any>(this.baseUrl + 'GetLocations');
   }
 }

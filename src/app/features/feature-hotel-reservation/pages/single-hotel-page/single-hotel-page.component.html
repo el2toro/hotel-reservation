@@ -8,11 +8,11 @@
   </div>
 
   <div class="images-section">
-    <app-images-section [hotel]="hotel"></app-images-section>
+    <app-images-section [hotel]="hotel" [room]="selectedRoom"></app-images-section>
   </div>
 
   <app-property-highlights></app-property-highlights>
-  <app-availability></app-availability>
+  <app-availability (setRoom)="setRoom($event)"></app-availability>
   <app-overview></app-overview>
   <app-hotel-amenities></app-hotel-amenities>
   <app-location></app-location>

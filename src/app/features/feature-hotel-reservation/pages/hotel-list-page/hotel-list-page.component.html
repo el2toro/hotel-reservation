@@ -1,4 +1,4 @@
-<app-loader *ngIf="false"></app-loader>
+<app-loader *ngIf="isLoading"></app-loader>
 
 <div class="hotel-list">
   <div class="navigation">
@@ -7,7 +7,7 @@
   </div>
 
   <div class="hotel-search">
-    <app-hotel-search></app-hotel-search>
+    <app-hotel-search (search)="getAllHotels($event)"></app-hotel-search>
   </div>
 
   <div class="content-container">
@@ -15,7 +15,7 @@
       <div class="search-result">
         <p>Search results</p>
         <div class="vertical-line"></div>
-        <p class="property-found"> <em>586</em> Properties found in Las Vegas</p>
+        <p class="property-found"> <em>{{ hotelList.length }}</em> Properties found in {{ hotelSearchModel.whereToGo }}</p>
       </div>
 
       <div class="properties-filter">

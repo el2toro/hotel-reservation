@@ -10,17 +10,17 @@ import { RoomModel } from 'src/app/models/room.model';
   styleUrls: ['./single-hotel-page.component.scss']
 })
 export class SingleHotelPageComponent implements OnInit {
-
   hotelId = 0;
   hotel: HotelModel = new HotelModel;
   rooms = <RoomModel[]>[];
+  selectedRoom = new RoomModel;
 
   constructor(private activatedRoute: ActivatedRoute, 
     private hotelReservationService: HotelReservationService) { }
 
   ngOnInit() {
     this.hotelId = this.activatedRoute.snapshot.params["id"];
-
+    this.selectedRoom = this.rooms[0];
     this.getHotelById();
     this.getRooms();
   }
@@ -37,5 +37,10 @@ export class SingleHotelPageComponent implements OnInit {
       next: (rooms) => {this.rooms = rooms, console.log(this.rooms)},
       error: (error) => console.log(error)
     })
+  }
+
+  setRoom(roomId: number){
+   this.selectedRoom = this.rooms.filter((room) => room.roomId == roomId)[0];
+   console.log(this.selectedRoom)
   }
 }

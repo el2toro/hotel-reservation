@@ -13,6 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ImagesSectionComponent implements OnInit {
  @Input() hotel = new HotelModel;
+ @Input() room = new RoomModel;
  rooms = <RoomModel[]>[];
  hotelId = 0;
 

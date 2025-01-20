@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HotelReservationService } from '../../services/hotel-reservation.service';
 import { HotelModel } from 'src/app/models/hotel.model';
 import { HotelCommonService } from '../../services/hotel.common.service';
+import { HotelSearchModel } from 'src/app/models/hotel-search.mode';
 
 interface Food {
   value: string;
@@ -22,6 +23,8 @@ export class HotelListPageComponent implements OnInit {
   totalPages = 0;
   hotelList = <HotelModel[]>[];
   totalPageList: number[] = [];
+  hotelSearchModel = new HotelSearchModel;
+  isLoading = false;
 
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -36,7 +39,7 @@ export class HotelListPageComponent implements OnInit {
     private hotelCommonService: HotelCommonService) { }
 
   ngOnInit() {
-    this.getAllHotels();
+
   }
 
   createPageList(){
@@ -45,8 +48,10 @@ export class HotelListPageComponent implements OnInit {
     }
   }
 
-  getAllHotels(){
-    this.hotelReservationService.getAllHotels().subscribe({
+  getAllHotels(searchModel: HotelSearchModel){
+    this.hotelSearchModel = searchModel;
+    this.isLoading = true;
+    this.hotelReservationService.getAllHotels(searchModel).subscribe({
       next: (hotelList: HotelModel[]) => {
         this.hotelList = hotelList;
         this.totalItems = this.hotelList.length;
@@ -54,6 +59,7 @@ export class HotelListPageComponent implements OnInit {
 
         this.getPageData(this.currentPage);
         this.createPageList();
+        this.isLoading = false;
       },
       error: (error) => console.log(error)
     })
@@ -83,7 +89,7 @@ export class HotelListPageComponent implements OnInit {
     const endIndex = Math.min(startIndex + this.pageSize, this.hotelList.length);
 
     this.hotelList = this.hotelList.slice(startIndex, endIndex);
-    console.log( this.hotelList)
+
     this.scrollToTop();
     return this.hotelList;
   }
