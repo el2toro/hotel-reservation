@@ -6,6 +6,8 @@ import { CheckoutService } from '../../../services/checkout.service';
 import { CheckoutModel } from '../../../models/checkout.model';
 import { CheckoutResponseModel } from '../../../models/checkout-response.model';
 import { Location } from '@angular/common';
+import { HotelSearchModel } from 'src/app/models/hotel-search.mode';
+import { DataSignalService } from 'src/app/features/feature-hotel-reservation/services/data.service';
 
 @Component({
   selector: 'app-stripe-checkout-page',
@@ -14,18 +16,21 @@ import { Location } from '@angular/common';
 })
  
 export class StripeCheckoutPageComponent implements OnInit {
+  public stripe!: StripeInstance;
+  isLoading: boolean = false;
+
+  private searchModel!: HotelSearchModel;
 
   constructor(private checkoutService: CheckoutService,
     private stripeFactory: StripeFactoryService,
-    private location: Location) { }
-
-    public stripe!: StripeInstance;
-
-    isLoading: boolean = false;
-
+    private location: Location,
+  private dataService: DataSignalService) { }
   
   ngOnInit() {
     this.stripe = this.stripeFactory.create(environment.stripePublicKey);
+    this.searchModel = this.dataService.getData();
+
+    console.log(this.searchModel)
   }
 
   checkout(){
